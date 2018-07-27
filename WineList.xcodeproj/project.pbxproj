@@ -7,23 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9EA30A6C7490B5C1043AD57 /* Pods_WineList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C228C65D85C68996A53123 /* Pods_WineList.framework */; };
+		E6AE66402108C00D00C93A34 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE663F2108C00000C93A34 /* Quicksand-Light.otf */; };
+		E6AE66542108C1E800C93A34 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664F2108C1A700C93A34 /* Raleway-Black.ttf */; };
+		E6AE66552108C1EB00C93A34 /* Raleway-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66502108C1A700C93A34 /* Raleway-BlackItalic.ttf */; };
+		E6AE66562108C1EE00C93A34 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66482108C1A500C93A34 /* Raleway-Bold.ttf */; };
+		E6AE66572108C1F100C93A34 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66472108C1A500C93A34 /* Raleway-BoldItalic.ttf */; };
+		E6AE66582108C1F600C93A34 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66512108C1A700C93A34 /* Raleway-ExtraBold.ttf */; };
+		E6AE66592108C1F600C93A34 /* Raleway-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66522108C1A700C93A34 /* Raleway-ExtraBoldItalic.ttf */; };
+		E6AE665A2108C1F600C93A34 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66442108C1A500C93A34 /* Raleway-ExtraLight.ttf */; };
+		E6AE665B2108C1F600C93A34 /* Raleway-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66452108C1A500C93A34 /* Raleway-ExtraLightItalic.ttf */; };
+		E6AE665C2108C1F600C93A34 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664C2108C1A600C93A34 /* Raleway-Italic.ttf */; };
+		E6AE665D2108C1F600C93A34 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664B2108C1A600C93A34 /* Raleway-Light.ttf */; };
+		E6AE665E2108C1F600C93A34 /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664E2108C1A600C93A34 /* Raleway-LightItalic.ttf */; };
+		E6AE665F2108C1F600C93A34 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664A2108C1A600C93A34 /* Raleway-Medium.ttf */; };
+		E6AE66602108C1F600C93A34 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66532108C1A700C93A34 /* Raleway-MediumItalic.ttf */; };
+		E6AE66612108C1F600C93A34 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66432108C1A500C93A34 /* Raleway-Regular.ttf */; };
+		E6AE66622108C1F600C93A34 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66492108C1A600C93A34 /* Raleway-SemiBold.ttf */; };
+		E6AE66632108C1F600C93A34 /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66462108C1A500C93A34 /* Raleway-SemiBoldItalic.ttf */; };
+		E6AE66642108C1F600C93A34 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664D2108C1A600C93A34 /* Raleway-Thin.ttf */; };
+		E6AE66652108C1F600C93A34 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66422108C1A500C93A34 /* Raleway-ThinItalic.ttf */; };
 		E6BF5D5F20C38D5300148C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */; };
-		E6BF5D6120C38D5300148C18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D6020C38D5300148C18 /* ViewController.swift */; };
+		E6BF5D6120C38D5300148C18 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */; };
 		E6BF5D6420C38D5300148C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6220C38D5300148C18 /* Main.storyboard */; };
 		E6BF5D6720C38D5300148C18 /* WineList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D6520C38D5300148C18 /* WineList.xcdatamodeld */; };
 		E6BF5D6920C38D5500148C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6820C38D5500148C18 /* Assets.xcassets */; };
 		E6BF5D6C20C38D5500148C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6A20C38D5500148C18 /* LaunchScreen.storyboard */; };
+		E6BF5D7420C3A64400148C18 /* WineListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7320C3A64400148C18 /* WineListVC.swift */; };
+		E6BF5D7620C3A66100148C18 /* AddWineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7520C3A66100148C18 /* AddWineVC.swift */; };
+		E6BF5D7820C3A67F00148C18 /* WineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18EAFDAAA31B522BCB1E4C66 /* Pods-WineList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineList.release.xcconfig"; path = "Pods/Target Support Files/Pods-WineList/Pods-WineList.release.xcconfig"; sourceTree = "<group>"; };
+		5E550A05FD1283853CD1B200 /* Pods-WineList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WineList/Pods-WineList.debug.xcconfig"; sourceTree = "<group>"; };
+		D5C228C65D85C68996A53123 /* Pods_WineList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WineList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6AE663F2108C00000C93A34 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
+		E6AE66422108C1A500C93A34 /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66432108C1A500C93A34 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		E6AE66442108C1A500C93A34 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E6AE66452108C1A500C93A34 /* Raleway-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66462108C1A500C93A34 /* Raleway-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66472108C1A500C93A34 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66482108C1A500C93A34 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		E6AE66492108C1A600C93A34 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		E6AE664A2108C1A600C93A34 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		E6AE664B2108C1A600C93A34 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		E6AE664C2108C1A600C93A34 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
+		E6AE664D2108C1A600C93A34 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		E6AE664E2108C1A600C93A34 /* Raleway-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-LightItalic.ttf"; sourceTree = "<group>"; };
+		E6AE664F2108C1A700C93A34 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
+		E6AE66502108C1A700C93A34 /* Raleway-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66512108C1A700C93A34 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E6AE66522108C1A700C93A34 /* Raleway-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		E6AE66532108C1A700C93A34 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		E6BF5D5B20C38D5300148C18 /* WineList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6BF5D6020C38D5300148C18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		E6BF5D6320C38D5300148C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6BF5D6620C38D5300148C18 /* WineList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WineList.xcdatamodel; sourceTree = "<group>"; };
 		E6BF5D6820C38D5500148C18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BF5D6B20C38D5500148C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6BF5D6D20C38D5500148C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6BF5D7320C3A64400148C18 /* WineListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListVC.swift; sourceTree = "<group>"; };
+		E6BF5D7520C3A66100148C18 /* AddWineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineVC.swift; sourceTree = "<group>"; };
+		E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +79,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EA30A6C7490B5C1043AD57 /* Pods_WineList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68DAC2C5C4422E8F038BD458 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5C228C65D85C68996A53123 /* Pods_WineList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6AE66412108C17D00C93A34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6AE664F2108C1A700C93A34 /* Raleway-Black.ttf */,
+				E6AE66502108C1A700C93A34 /* Raleway-BlackItalic.ttf */,
+				E6AE66482108C1A500C93A34 /* Raleway-Bold.ttf */,
+				E6AE66472108C1A500C93A34 /* Raleway-BoldItalic.ttf */,
+				E6AE66512108C1A700C93A34 /* Raleway-ExtraBold.ttf */,
+				E6AE66522108C1A700C93A34 /* Raleway-ExtraBoldItalic.ttf */,
+				E6AE66442108C1A500C93A34 /* Raleway-ExtraLight.ttf */,
+				E6AE66452108C1A500C93A34 /* Raleway-ExtraLightItalic.ttf */,
+				E6AE664C2108C1A600C93A34 /* Raleway-Italic.ttf */,
+				E6AE664B2108C1A600C93A34 /* Raleway-Light.ttf */,
+				E6AE664E2108C1A600C93A34 /* Raleway-LightItalic.ttf */,
+				E6AE664A2108C1A600C93A34 /* Raleway-Medium.ttf */,
+				E6AE66532108C1A700C93A34 /* Raleway-MediumItalic.ttf */,
+				E6AE66432108C1A500C93A34 /* Raleway-Regular.ttf */,
+				E6AE66492108C1A600C93A34 /* Raleway-SemiBold.ttf */,
+				E6AE66462108C1A500C93A34 /* Raleway-SemiBoldItalic.ttf */,
+				E6AE664D2108C1A600C93A34 /* Raleway-Thin.ttf */,
+				E6AE66422108C1A500C93A34 /* Raleway-ThinItalic.ttf */,
+				E6AE663F2108C00000C93A34 /* Quicksand-Light.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E6BF5D5220C38D5300148C18 = {
 			isa = PBXGroup;
 			children = (
 				E6BF5D5D20C38D5300148C18 /* WineList */,
 				E6BF5D5C20C38D5300148C18 /* Products */,
+				FAEB9A2942D86F08590BA735 /* Pods */,
+				68DAC2C5C4422E8F038BD458 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */,
-				E6BF5D6020C38D5300148C18 /* ViewController.swift */,
+				E6AE66412108C17D00C93A34 /* Resources */,
+				E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */,
+				E6BF5D7320C3A64400148C18 /* WineListVC.swift */,
+				E6BF5D7520C3A66100148C18 /* AddWineVC.swift */,
+				E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */,
 				E6BF5D6220C38D5300148C18 /* Main.storyboard */,
 				E6BF5D6820C38D5500148C18 /* Assets.xcassets */,
 				E6BF5D6A20C38D5500148C18 /* LaunchScreen.storyboard */,
@@ -67,6 +156,15 @@
 			path = WineList;
 			sourceTree = "<group>";
 		};
+		FAEB9A2942D86F08590BA735 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E550A05FD1283853CD1B200 /* Pods-WineList.debug.xcconfig */,
+				18EAFDAAA31B522BCB1E4C66 /* Pods-WineList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6BF5D7020C38D5500148C18 /* Build configuration list for PBXNativeTarget "WineList" */;
 			buildPhases = (
+				6032EB24518C75E38C8EEE60 /* [CP] Check Pods Manifest.lock */,
 				E6BF5D5720C38D5300148C18 /* Sources */,
 				E6BF5D5820C38D5300148C18 /* Frameworks */,
 				E6BF5D5920C38D5300148C18 /* Resources */,
+				8587A9D5D5FB49D1240FDD78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,22 +225,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AE665B2108C1F600C93A34 /* Raleway-ExtraLightItalic.ttf in Resources */,
+				E6AE66592108C1F600C93A34 /* Raleway-ExtraBoldItalic.ttf in Resources */,
+				E6AE66602108C1F600C93A34 /* Raleway-MediumItalic.ttf in Resources */,
+				E6AE66612108C1F600C93A34 /* Raleway-Regular.ttf in Resources */,
+				E6AE665E2108C1F600C93A34 /* Raleway-LightItalic.ttf in Resources */,
 				E6BF5D6C20C38D5500148C18 /* LaunchScreen.storyboard in Resources */,
+				E6AE66552108C1EB00C93A34 /* Raleway-BlackItalic.ttf in Resources */,
+				E6AE66542108C1E800C93A34 /* Raleway-Black.ttf in Resources */,
+				E6AE66622108C1F600C93A34 /* Raleway-SemiBold.ttf in Resources */,
+				E6AE665D2108C1F600C93A34 /* Raleway-Light.ttf in Resources */,
+				E6AE665F2108C1F600C93A34 /* Raleway-Medium.ttf in Resources */,
+				E6AE66632108C1F600C93A34 /* Raleway-SemiBoldItalic.ttf in Resources */,
 				E6BF5D6920C38D5500148C18 /* Assets.xcassets in Resources */,
 				E6BF5D6420C38D5300148C18 /* Main.storyboard in Resources */,
+				E6AE66652108C1F600C93A34 /* Raleway-ThinItalic.ttf in Resources */,
+				E6AE665C2108C1F600C93A34 /* Raleway-Italic.ttf in Resources */,
+				E6AE66582108C1F600C93A34 /* Raleway-ExtraBold.ttf in Resources */,
+				E6AE665A2108C1F600C93A34 /* Raleway-ExtraLight.ttf in Resources */,
+				E6AE66572108C1F100C93A34 /* Raleway-BoldItalic.ttf in Resources */,
+				E6AE66402108C00D00C93A34 /* Quicksand-Light.otf in Resources */,
+				E6AE66562108C1EE00C93A34 /* Raleway-Bold.ttf in Resources */,
+				E6AE66642108C1F600C93A34 /* Raleway-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6032EB24518C75E38C8EEE60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WineList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8587A9D5D5FB49D1240FDD78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WineList/Pods-WineList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WineList/Pods-WineList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6BF5D5720C38D5300148C18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BF5D6120C38D5300148C18 /* ViewController.swift in Sources */,
+				E6BF5D7820C3A67F00148C18 /* WineDetailVC.swift in Sources */,
+				E6BF5D6120C38D5300148C18 /* MainMenuVC.swift in Sources */,
 				E6BF5D5F20C38D5300148C18 /* AppDelegate.swift in Sources */,
+				E6BF5D7620C3A66100148C18 /* AddWineVC.swift in Sources */,
 				E6BF5D6720C38D5300148C18 /* WineList.xcdatamodeld in Sources */,
+				E6BF5D7420C3A64400148C18 /* WineListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +445,7 @@
 		};
 		E6BF5D7120C38D5500148C18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E550A05FD1283853CD1B200 /* Pods-WineList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +464,7 @@
 		};
 		E6BF5D7220C38D5500148C18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18EAFDAAA31B522BCB1E4C66 /* Pods-WineList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
