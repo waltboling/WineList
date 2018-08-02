@@ -8,80 +8,172 @@
 
 import UIKit
 import ChameleonFramework
+import CloudKit
+//import SVProgressHUD - maybe add this later to give some better progess UI
 
-class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let backgroundColors:[UIColor] = [
-        UIColor.flatMaroon,
-        UIColor.flatWatermelon
+class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+    
+    let colors:[UIColor] = [
+        UIColor.flatPlum,
+        UIColor.flatMaroon
     ]
     
-    let cellColorScheme1 = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPinkDark, withFlatScheme: true)!
-    
-    let cellColorScheme2 = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatYellowDark, withFlatScheme: true)!
-    
-    let testArray = ["apple", "orange", "blue", "green"]
+    var wines = [CKRecord]()
+    var filteredWines = [CKRecord]()
+    var sortOptions = ["None","Price", "Type", "Store", "Liked", "Year"]
+    let searchController = UISearchController(searchResultsController: nil)
 
     
     @IBOutlet weak var wineListTableView: UITableView!
     
-  
+    @IBOutlet weak var sortOptionsPickerView: UIPickerView!
     
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    @IBAction func filterButtonWasTapped(_ sender: Any) {
+        if sortOptionsPickerView.isHidden == true {
+             sortOptionsPickerView.isHidden = false
+            sortOptionsPickerView.backgroundColor = .white
+            
+        } else {
+            sortOptionsPickerView.isHidden = true
+        }
+       
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
-        let wineCell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath)
-        //var makeInt32 = Int(cellColorScheme.count)
-        let randomIndex = Int(arc4random_uniform(UInt32(cellColorScheme1.count)))
-
-        let randomColor = cellColorScheme1[randomIndex]
-        wineCell.backgroundColor = .clear
-        wineCell.textLabel?.text = "Bastide Miraflors 2008"
-        wineCell.textLabel?.textColor = .white
-        wineCell.textLabel?.font = UIFont(name: "Raleway-Light", size: 16)
-        return wineCell
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWineDetail" {
+            if let indexPath = self.wineListTableView.indexPathForSelectedRow {
+                //let wine = wines[indexPath.row]
+                let wine = filteredWines[indexPath.row]
+                let controller = segue.destination as! WineDetailVC
+                
+                controller.selectedWine = wine
+            }
+        }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-        
+        loadWines()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.flatPlum
+        view.backgroundColor = .white
         wineListTableView.backgroundColor = .clear
         //self.navigationController?.isNavigationBarHidden = false
+        sortOptionsPickerView.isHidden = true
+        
+        configureSearchBar()
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func loadWines() {
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let query = CKQuery(recordType: "Wines", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        publicDatabase.perform(query, inZoneWith: nil) { (results: [CKRecord]?, error: Error?) in
+            if let wines = results {
+                self.wines = wines
+                self.filteredWines = wines
+                DispatchQueue.main.async(execute: {
+                    self.wineListTableView.reloadData()
+                })
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //setting up search bar
+    func configureSearchBar() {
+        filteredWines = wines
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        wineListTableView.tableHeaderView = searchController.searchBar
     }
-    */
-
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if searchController.searchBar.text! == "" {
+            filteredWines = wines
+        } else { 
+            filteredWines = wines.filter({ ($0["wineName"]?.description.lowercased().contains(searchController.searchBar.text!.lowercased()))!
+            })
+        }
+        self.wineListTableView.reloadData()
+    }
+    
+    //MARK: UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return wines.count
+        return filteredWines.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
+        let wineCell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath)
+        //let wine = wines[indexPath.row]
+        let wine = filteredWines[indexPath.row]
+        if let wineName = wine["wineName"] as? String {
+        wineCell.backgroundColor = .clear
+        wineCell.textLabel?.text = wineName
+        wineCell.textLabel?.textColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
+        wineCell.textLabel?.font = UIFont(name: "Raleway-Regular", size: 17)
+        }
+        
+        return wineCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toWineDetail", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //let selectedRecordID = wines[indexPath.row].recordID
+            let selectedRecordID = filteredWines[indexPath.row].recordID
+            
+            let publicDatabase = CKContainer.default().publicCloudDatabase
+            
+            publicDatabase.delete(withRecordID: selectedRecordID) { (recordID, error) -> Void in
+                if error != nil {
+                    print(error!)
+                } else {
+                    OperationQueue.main.addOperation({ () -> Void in
+                        //self.wines.remove(at: indexPath.row)
+                        self.filteredWines.remove(at: indexPath.row)
+                        self.wineListTableView.reloadData()
+                    })
+                }
+            }
+        }
+    }
 }
 
-/*extension UITableViewDataSource {
-    
-}
-
-extension UITableViewDelegate {
-    
+/*extension UITableViewDelegate {
 }*/
+
+extension WineListVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sortOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return sortOptions[row]
+    }
+    
+    
+}

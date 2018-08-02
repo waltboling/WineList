@@ -9,36 +9,138 @@
 import UIKit
 import AVFoundation
 import ChameleonFramework
+import CloudKit
 
 
 
-class AddWineVC: UIViewController {
+class AddWineVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, AVCapturePhotoCaptureDelegate {
     
     var captureSession = AVCaptureSession()
     var backCamera = AVCaptureDevice.default(for: AVMediaType.video) //modified from vid since i dont want any other camera option available
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var image: UIImage?
+    var wines = [CKRecord]()
+    var imageURL: NSURL!
+    let documentsDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+    let tempImageName = "temp_image.jpg"
+    
+    /*var wineName: CKRecord?
+    var wineType: CKRecord?
+    var winePrice: CKRecord?
+    var storeLocation: CKRecord?
+    var likeStatus: CKRecord?
+    var userNotes: CKRecord?
+    var wineImage: CKAsset?*/
     
     let backgroundColor: [UIColor] = [
         UIColor.flatMaroonDark,
         UIColor.flatMaroonDark,
         UIColor.flatPlum
-        
-        /*UIColor.flatWhite,
-        UIColor.flatSand,
-        UIColor.flatSand,
-        //wont lighten correctlyUIColor.flatYellow.lighten(byPercentage: 0.5)!*/
     ]
     
+    @IBOutlet weak var wineTypeTextField: UITextField!
+    @IBOutlet weak var wineNameTextField: UITextField!
+    @IBOutlet weak var storeNameTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView! {
+        didSet {
+            notesTextView?.addDoneCancelToolbar()
+        }
+    }
+    @IBOutlet weak var priceTextField: UITextField! {
+        didSet {
+            priceTextField?.addDoneCancelToolbar()
+        }
+    }
+    
+    @IBOutlet weak var formScrollView: UIScrollView!
+    
+    @IBOutlet weak var metaScrollView: UIScrollView!
     
     @IBOutlet weak var snapPhotoButton: UIButton!
-    
     @IBOutlet weak var retakeButton: UIButton!
+    @IBOutlet weak var saveWineButton: UIButton!
     
     @IBOutlet weak var captureImageView: UIView!
-    
     @IBOutlet weak var photoCapturePreview: UIImageView!
+    
+    
+    @IBAction func saveWineWasTapped(_ sender: Any) {
+        saveThatWine()
+        saveWineButton.titleLabel?.text = "Saved!"
+        if let url = imageURL { // had to finagle this code a bit, but it's supposed to delete the URL if the saved image is canceled
+            //let fileManager = FileManager()
+            do {
+                if FileManager.default.fileExists(atPath: url.absoluteString!) {
+                    try FileManager.default.removeItem(at: url as URL)
+                }
+            } catch {
+                print("error")
+            }
+        }
+        
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    //icloud saving actions coded here, called in saveWineWasTapped
+    func saveThatWine() {
+        if wineNameTextField?.text != "" {
+            let newWine = CKRecord(recordType: "Wines")
+            newWine["wineName"] = wineNameTextField?.text as CKRecordValue?
+            newWine["wineType"] = wineTypeTextField?.text as CKRecordValue?
+            newWine["storeName"] = storeNameTextField?.text as CKRecordValue?
+            newWine["winePrice"] = priceTextField?.text as CKRecordValue?
+           // newWine["likeStatus"] =
+            newWine["userNotes"] = notesTextView?.text as CKRecordValue?
+            
+            //newWine["wineImage"] = image as? CKRecordValue
+            if let url = imageURL {
+                let imageAsset = CKAsset(fileURL: url as URL)
+                newWine["wineImage"] = imageAsset
+            }
+           /* else {
+                let fileURL = NSBundle.mainBundle().URLForResource("no_image", withExtension: "png")
+                let imageAsset = CKAsset(fileURL: fileURL)
+                noteRecord.setObject(imageAsset, forKey: "wineImage")
+            }*/
+            
+            let publicDatabase = CKContainer.default().publicCloudDatabase
+            publicDatabase.save(newWine, completionHandler: { (record: CKRecord?, error: Error?) in
+                if error == nil {
+                    print("wine saved!")
+                } else {
+                    print("Error: \(error.debugDescription)")
+                }
+            })
+        }
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings, error: Error?) {
+        
+        /*if let imageData = photo.fileDataRepresentation() {
+            image = UIImage(data: imageData)
+            //photoCapturePreview.image = image
+        }*/
+        print("HERE")
+    }
+    
+    
+    //originally had this in the extension delegate. not getting called
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+           image = UIImage(data: imageData)
+            //photoCapturePreview.image = image
+            saveImageLocally()
+        }
+    }
+    
+    func saveImageLocally() {
+        let imageData = UIImageJPEGRepresentation(image!, 0.8)! as NSData
+        let path = documentsDirectoryPath.appendingPathComponent(tempImageName)
+        imageURL = NSURL(fileURLWithPath: path)
+        imageData.write(to: imageURL as URL, atomically: true)
+    }
+    
     
     @IBAction func didTakePhoto(_ sender: UIButton) {
         let settings = AVCapturePhotoSettings()
@@ -46,27 +148,6 @@ class AddWineVC: UIViewController {
         captureSession.stopRunning()
         snapPhotoButton.isHidden = true
         retakeButton.isHidden = false
-        
-        
-        
-        //standard photo capture code (not working how I want)
-        /*
-        let settings = AVCapturePhotoSettings()
-        let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
-        let previewFormat = [
-            kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
-            kCVPixelBufferWidthKey as String: 160,
-            kCVPixelBufferHeightKey as String: 160
-        ]
-        settings.previewPhotoFormat = previewFormat
-        cameraOutput?.capturePhoto(with: settings, delegate: self)
-    }*/
-    
-        //standard photo capture code (not working how i want)
-        /*
-    var session: AVCaptureSession?
-    var cameraOutput: AVCapturePhotoOutput?
-    var previewLayer: AVCaptureVideoPreviewLayer?*/
     }
     
     @IBAction func retakeImageWasTapped(_ sender: UIButton) {
@@ -74,6 +155,7 @@ class AddWineVC: UIViewController {
         if photoOutput != nil {
             /*captureSession.removeOutput(photoOutput!)
             runCamera()*/
+            imageURL = nil
             captureSession.startRunning()
             retakeButton.isHidden = true
             snapPhotoButton.isHidden = false
@@ -81,8 +163,49 @@ class AddWineVC: UIViewController {
         } else {
             return
         }
-            
+    }
         
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == wineNameTextField {
+            textField.resignFirstResponder()
+            priceTextField.becomeFirstResponder()
+        } else if textField == priceTextField {
+            textField.didEnterInput()
+            wineTypeTextField.becomeFirstResponder()
+        } else if textField == wineTypeTextField {
+            textField.resignFirstResponder()
+            storeNameTextField.becomeFirstResponder()
+        } else if textField == storeNameTextField {
+            textField.resignFirstResponder()
+            notesTextView.becomeFirstResponder()
+        }
+        
+        return true
+    }
+        
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        metaScrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        metaScrollView.setContentOffset(CGPoint(x: 0, y: -60), animated: true)
+        //formScrollView.setZoomScale(0.75, animated: true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        metaScrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        metaScrollView.setContentOffset(CGPoint(x: 0, y: -60), animated: true)
+    }
+    
+    func configureTextFields() {
+        self.wineNameTextField.delegate = self
+        self.wineTypeTextField.delegate = self
+        self.storeNameTextField.delegate = self
+        self.priceTextField.delegate = self
+        self.notesTextView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,49 +223,9 @@ class AddWineVC: UIViewController {
         runCamera()
         setupInputOutput()
         retakeButton.isHidden = true
+        configureTextFields()
     
         view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: backgroundColor)
-       
-        //standard photocapture code
-        /*
-        let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
-        session = AVCaptureSession()
-        session!.sessionPreset = AVCaptureSession.Preset.photo
-
-        var error: NSError?
-        var input: AVCaptureDeviceInput!
-        do {
-            input = try AVCaptureDeviceInput(device: backCamera!)
-        } catch let error1 as NSError {
-            error = error1
-            input = nil
-            print(error!.localizedDescription)
-        }
-        
-        if error == nil && session!.canAddInput(input) {
-            session!.addInput(input)
-        }
-        
-        cameraOutput = AVCapturePhotoOutput()
-        //stillImageOutput?. = [AVVideoCodecKey: AVVideoCodecJPEG]
-        
-        if session!.canAddOutput(cameraOutput!) {
-            session!.addOutput(cameraOutput!)
-        }
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: session!)
-        previewLayer!.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        previewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        captureImageView.layer.addSublayer(previewLayer!)
-        session!.startRunning()
-        
-        self.view.insertSubview(photoCapturePreview, aboveSubview: captureImageView)
-    
-        
-        
-        
-        */
-    
     }
     
     func runCamera() {
@@ -152,13 +235,13 @@ class AddWineVC: UIViewController {
         setupPreviewLayer()
         startRunningCaptureSession()
     }
+    
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
     
     func setupDevice() {
-       
-    }
+    } // no code here atm bc i'm only allowing for back camera to be used
     
     func setupInputOutput() {
         do {
@@ -236,11 +319,11 @@ class AddWineVC: UIViewController {
 
 }
 
-extension AddWineVC: AVCapturePhotoCaptureDelegate {
+/*extension AddWineVC: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            image = UIImage(data:imageData)
-            //photoCapturePreview.image = image
+            image = UIImage(data: imageData)
+            photoCapturePreview.image = image
         }
     }
-}
+}*/
