@@ -52,7 +52,7 @@ class MainMenuVC: UIViewController {
     }
     
     @IBAction func addWineWasTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toAddWine", sender: self)
+        performSegue(withIdentifier: "toNewWineVC", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

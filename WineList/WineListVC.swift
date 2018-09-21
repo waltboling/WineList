@@ -22,13 +22,15 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     var filteredWines = [CKRecord]()
     var sortOptions = ["None","Price", "Type", "Store", "Liked", "Year"]
     let searchController = UISearchController(searchResultsController: nil)
-
+    var refresh = UIRefreshControl()
     
     @IBOutlet weak var wineListTableView: UITableView!
     
     @IBOutlet weak var sortOptionsPickerView: UIPickerView!
     
     @IBOutlet weak var filterButton: UIBarButtonItem!
+    
+    @IBOutlet weak var toolbar: UIToolbar!
     
     @IBAction func filterButtonWasTapped(_ sender: Any) {
         if sortOptionsPickerView.isHidden == true {
@@ -69,6 +71,17 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         configureSearchBar()
         
+        toolbar.barTintColor = UIColor.flatPlum
+        toolbar.tintColor = .white
+        let navBar = self.navigationController?.navigationBar
+        navBar?.tintColor = .white
+        navBar?.barTintColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
+        navBar?.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Raleway-Regular", size: 18)!, .foregroundColor: UIColor.white]
+        
+        refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: "Pull to load Lists")
+        refresh.addTarget(self, action: #selector(WineListVC.loadWines), for: .valueChanged)
+        wineListTableView.addSubview(refresh)
         
         
 
@@ -76,10 +89,10 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     @objc func loadWines() {
-        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let privateDatabase = CKContainer.default().privateCloudDatabase
         let query = CKQuery(recordType: "Wines", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        publicDatabase.perform(query, inZoneWith: nil) { (results: [CKRecord]?, error: Error?) in
+        privateDatabase.perform(query, inZoneWith: nil) { (results: [CKRecord]?, error: Error?) in
             if let wines = results {
                 self.wines = wines
                 self.filteredWines = wines
@@ -104,8 +117,9 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         if searchController.searchBar.text! == "" {
             filteredWines = wines
-        } else { 
-            filteredWines = wines.filter({ ($0["wineName"]?.description.lowercased().contains(searchController.searchBar.text!.lowercased()))!
+        } else if let searchStr = searchController.searchBar.text?.lowercased() {
+            filteredWines = wines.filter({ (($0["wineName"]?.description.lowercased().contains(searchStr))! || ($0["year"]?.description.contains(searchStr))! )
+                //how to include more search options in same function
             })
         }
         self.wineListTableView.reloadData()
@@ -122,11 +136,33 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         let wineCell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath)
         //let wine = wines[indexPath.row]
         let wine = filteredWines[indexPath.row]
+        //let yearLabel: String?
+        var likeLabel: String?
+        var typeLabel: String?
+        let detailString: String?
         if let wineName = wine["wineName"] as? String {
-        wineCell.backgroundColor = .clear
-        wineCell.textLabel?.text = wineName
-        wineCell.textLabel?.textColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
-        wineCell.textLabel?.font = UIFont(name: "Raleway-Regular", size: 17)
+            wineCell.backgroundColor = .clear
+            wineCell.textLabel?.text = wineName
+            wineCell.textLabel?.textColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
+            wineCell.textLabel?.font = UIFont(name: "Raleway-Regular", size: 17)
+            if let year = wine["year"] as? String {
+                wineCell.textLabel?.text = "\(year) \(wineName)"
+            }
+            if let type = wine["wineType"] as? String {
+                typeLabel = type
+            }
+            if let like = wine["likeIndex"] as? Int {
+                if like == 0 {
+                    likeLabel = "Liked!"
+                    wineCell.detailTextLabel?.textColor = .flatMintDark
+                } else if like == 1 {
+                    likeLabel = "Disliked!"
+                    wineCell.detailTextLabel?.textColor = .flatRed
+                }
+            }
+            detailString = "\(typeLabel ?? "") \(likeLabel ?? "")"
+            
+            wineCell.detailTextLabel?.text = detailString!
         }
         
         return wineCell
@@ -141,9 +177,9 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             //let selectedRecordID = wines[indexPath.row].recordID
             let selectedRecordID = filteredWines[indexPath.row].recordID
             
-            let publicDatabase = CKContainer.default().publicCloudDatabase
+            let privateDatabase = CKContainer.default().privateCloudDatabase
             
-            publicDatabase.delete(withRecordID: selectedRecordID) { (recordID, error) -> Void in
+            privateDatabase.delete(withRecordID: selectedRecordID) { (recordID, error) -> Void in
                 if error != nil {
                     print(error!)
                 } else {
