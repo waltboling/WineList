@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHx-Xs-8v6">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHx-Xs-8v6">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Raleway-ExtraLight.ttf">
+            <string>Raleway-ExtraLight</string>
+        </array>
         <array key="Raleway-Light.ttf">
             <string>Raleway-Light</string>
         </array>
@@ -24,13 +26,13 @@
             <objects>
                 <viewController title="MainMenu" id="BYZ-38-t0r" customClass="MainMenuVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTZ-Qw-ORx">
-                                <rect key="frame" x="147" y="273" width="120" height="120"/>
+                                <rect key="frame" x="147" y="367" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="Hpa-jJ-dbE"/>
+                                    <constraint firstAttribute="width" constant="120" id="Hpa-jJ-dbE"/>
                                     <constraint firstAttribute="height" constant="120" id="tzS-YE-1n7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
@@ -42,16 +44,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WineList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITD-Kk-DHG">
-                                <rect key="frame" x="0.0" y="139" width="414" height="56"/>
+                                <rect key="frame" x="115.00000000000001" y="233" width="184.33333333333337" height="56"/>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y02-5a-rUi">
-                                <rect key="frame" x="147" y="449" width="120" height="120"/>
+                                <rect key="frame" x="147" y="543" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7eB-rj-T8H"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="QuZ-c9-qo5"/>
+                                    <constraint firstAttribute="width" constant="120" id="QuZ-c9-qo5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
                                 <state key="normal" title="Add New Wine" backgroundImage="WineListMenuAddIcon(stemlessWhite)">
@@ -64,14 +66,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ITD-Kk-DHG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="2YM-X9-B08"/>
-                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="centerX" secondItem="Y02-5a-rUi" secondAttribute="centerX" id="7yc-MS-C8G"/>
-                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ITD-Kk-DHG" secondAttribute="bottom" constant="78" id="9kV-sl-094"/>
-                            <constraint firstItem="Y02-5a-rUi" firstAttribute="top" secondItem="VTZ-Qw-ORx" secondAttribute="bottom" constant="56" id="JR6-Cf-U9d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ITD-Kk-DHG" secondAttribute="trailing" id="SeJ-5v-IUr"/>
-                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="top" secondItem="ITD-Kk-DHG" secondAttribute="bottom" constant="78" id="XDy-Kq-7cV"/>
-                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="centerX" secondItem="ITD-Kk-DHG" secondAttribute="centerX" id="ogf-po-HMd"/>
-                            <constraint firstItem="ITD-Kk-DHG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q8Z-Dp-8fz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y02-5a-rUi" secondAttribute="bottom" constant="28" id="1fB-61-Qvc"/>
+                            <constraint firstItem="ITD-Kk-DHG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="2YM-X9-B08"/>
+                            <constraint firstItem="Y02-5a-rUi" firstAttribute="top" secondItem="VTZ-Qw-ORx" secondAttribute="bottom" constant="56" id="EeB-Zt-hE3"/>
+                            <constraint firstItem="Y02-5a-rUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HSx-te-v3c"/>
+                            <constraint firstItem="Y02-5a-rUi" firstAttribute="top" relation="lessThanOrEqual" secondItem="VTZ-Qw-ORx" secondAttribute="bottom" constant="56" id="JR6-Cf-U9d"/>
+                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="top" relation="lessThanOrEqual" secondItem="ITD-Kk-DHG" secondAttribute="bottom" constant="78" id="XDy-Kq-7cV"/>
+                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZdF-MO-LRt"/>
+                            <constraint firstItem="ITD-Kk-DHG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="phh-Cd-su4"/>
+                            <constraint firstItem="VTZ-Qw-ORx" firstAttribute="top" secondItem="ITD-Kk-DHG" secondAttribute="bottom" constant="78" id="wwH-I9-vID"/>
+                            <constraint firstItem="Y02-5a-rUi" firstAttribute="leading" secondItem="VTZ-Qw-ORx" secondAttribute="leading" id="xNw-3v-OVg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -86,228 +90,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="791"/>
+            <point key="canvasLocation" x="223" y="790"/>
         </scene>
-        <!--AddNewWine-->
-        <scene sceneID="vV3-dz-MH1">
-            <objects>
-                <viewController title="AddNewWine" id="XtX-iQ-Qde" customClass="AddWineVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ibw-70-2EN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B90-Lb-BJp">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EBA-ge-2ad">
-                                        <rect key="frame" x="0.0" y="333" width="414" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPu-xl-NIz">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
-                                                <color key="backgroundColor" red="0.95597352599999996" green="0.96543861040000001" blue="0.96543861040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Photo From Library">
-                                                    <color key="titleColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="selectImgTapped:" destination="XtX-iQ-Qde" eventType="touchUpInside" id="mRq-Xe-NxD"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-Zh-9Wa">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="30"/>
-                                                <color key="backgroundColor" red="0.95597352599999996" green="0.96543861040000001" blue="0.96543861040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Take New Photo">
-                                                    <color key="titleColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="takePhotoTapped:" destination="XtX-iQ-Qde" eventType="touchUpInside" id="H01-Tn-WXK"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCJ-QL-T3k">
-                                        <rect key="frame" x="0.0" y="363" width="414" height="284"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EY0-6S-3VB">
-                                                <rect key="frame" x="45.666666666666657" y="118" width="325.66666666666674" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="31" id="qJ4-KV-GXs"/>
-                                                </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="52X-v7-ryN">
-                                                <rect key="frame" x="45.666666666666657" y="157" width="325.33333333333337" height="65"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-UH-qiq">
-                                                <rect key="frame" x="45.666666666666657" y="42" width="163" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="163" id="Wgb-Eu-Wj3"/>
-                                                </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Name (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-46-nmx">
-                                                <rect key="frame" x="44.666666666666657" y="21" width="326.33333333333337" height="17"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="wineNameTextField"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                        <color key="value" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-cO-VQl">
-                                                <rect key="frame" x="276.33333333333331" y="42" width="95" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="BUs-ky-rUU"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Yes"/>
-                                                    <segment title="No"/>
-                                                </segments>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCE-Vo-sXj">
-                                                <rect key="frame" x="228.66666666666666" y="46" width="39.666666666666657" height="20"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ng-w2-hmg">
-                                                <rect key="frame" x="167.66666666666666" y="220" width="81" height="33"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Save Wine">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="saveWineWasTapped:" destination="XtX-iQ-Qde" eventType="touchUpInside" id="H9A-be-tPv"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-jj-qdh">
-                                                <rect key="frame" x="45.666666666666657" y="77" width="325.33333333333337" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="tmU-eI-XtR"/>
-                                                </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="leading" secondItem="EY0-6S-3VB" secondAttribute="leading" id="0bm-P5-O17"/>
-                                            <constraint firstItem="H9i-UH-qiq" firstAttribute="top" secondItem="cg8-46-nmx" secondAttribute="bottom" constant="4" id="1W4-VX-Ed7"/>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="trailing" secondItem="52X-v7-ryN" secondAttribute="trailing" constant="0.5" id="3o8-AJ-Sj0"/>
-                                            <constraint firstItem="cg8-46-nmx" firstAttribute="leading" secondItem="H9i-UH-qiq" secondAttribute="leading" constant="-1" id="9Xh-cf-yvC"/>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="top" secondItem="bCJ-QL-T3k" secondAttribute="top" constant="77" id="BuR-qc-TlX"/>
-                                            <constraint firstItem="cg8-46-nmx" firstAttribute="trailing" secondItem="VGj-cO-VQl" secondAttribute="trailing" id="C3F-Ag-6nr"/>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="top" secondItem="H9i-UH-qiq" secondAttribute="bottom" constant="4" id="EcN-jw-ZUt"/>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="centerX" secondItem="9ng-w2-hmg" secondAttribute="centerX" id="MMZ-jo-so8"/>
-                                            <constraint firstItem="9ng-w2-hmg" firstAttribute="top" secondItem="52X-v7-ryN" secondAttribute="bottom" constant="-2" id="RhS-JT-FIi"/>
-                                            <constraint firstAttribute="trailing" secondItem="3bs-jj-qdh" secondAttribute="trailing" constant="24" id="TFv-vT-Ym8"/>
-                                            <constraint firstItem="VGj-cO-VQl" firstAttribute="leading" secondItem="eCE-Vo-sXj" secondAttribute="trailing" constant="8" symbolic="YES" id="TV0-9x-KeV"/>
-                                            <constraint firstAttribute="bottom" secondItem="9ng-w2-hmg" secondAttribute="bottom" constant="31" id="Te3-Gt-tHH"/>
-                                            <constraint firstItem="EY0-6S-3VB" firstAttribute="top" secondItem="3bs-jj-qdh" secondAttribute="bottom" constant="11" id="VCU-nV-QgK"/>
-                                            <constraint firstItem="52X-v7-ryN" firstAttribute="top" secondItem="EY0-6S-3VB" secondAttribute="bottom" constant="8" id="bBG-aN-R8z"/>
-                                            <constraint firstItem="VGj-cO-VQl" firstAttribute="trailing" secondItem="EY0-6S-3VB" secondAttribute="trailing" id="d8i-N3-33f"/>
-                                            <constraint firstItem="VGj-cO-VQl" firstAttribute="top" secondItem="cg8-46-nmx" secondAttribute="bottom" constant="3.5" id="f6g-va-IzV"/>
-                                            <constraint firstItem="eCE-Vo-sXj" firstAttribute="leading" secondItem="H9i-UH-qiq" secondAttribute="trailing" constant="20" id="fnQ-Ex-yB2"/>
-                                            <constraint firstAttribute="trailing" secondItem="cg8-46-nmx" secondAttribute="trailing" constant="24" id="g2v-ME-OI1"/>
-                                            <constraint firstItem="3bs-jj-qdh" firstAttribute="top" secondItem="VGj-cO-VQl" secondAttribute="bottom" constant="7.5" id="lbZ-8P-wSa"/>
-                                            <constraint firstItem="H9i-UH-qiq" firstAttribute="leading" secondItem="3bs-jj-qdh" secondAttribute="leading" id="nRI-fb-Nyr"/>
-                                            <constraint firstItem="eCE-Vo-sXj" firstAttribute="centerY" secondItem="VGj-cO-VQl" secondAttribute="centerY" id="nXg-lV-rtD"/>
-                                            <constraint firstItem="EY0-6S-3VB" firstAttribute="leading" secondItem="52X-v7-ryN" secondAttribute="leading" id="pju-Gh-spd"/>
-                                            <constraint firstItem="9ng-w2-hmg" firstAttribute="centerX" secondItem="bCJ-QL-T3k" secondAttribute="centerX" constant="1" id="qG0-YD-bw7"/>
-                                            <constraint firstAttribute="bottom" secondItem="3bs-jj-qdh" secondAttribute="bottom" constant="177" id="rvs-Qr-ATP"/>
-                                        </constraints>
-                                    </scrollView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WineListIconBW" translatesAutoresizingMaskIntoConstraints="NO" id="8Fo-SJ-OSJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="333" id="Qxz-LP-DyT"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8Fo-SJ-OSJ" secondAttribute="bottom" constant="314" id="5v7-ul-P7Z"/>
-                                    <constraint firstItem="bCJ-QL-T3k" firstAttribute="leading" secondItem="8Fo-SJ-OSJ" secondAttribute="leading" id="7bb-Jb-Tc1"/>
-                                    <constraint firstItem="bCJ-QL-T3k" firstAttribute="centerX" secondItem="B90-Lb-BJp" secondAttribute="centerX" id="BA8-eM-PGI"/>
-                                    <constraint firstItem="EBA-ge-2ad" firstAttribute="top" secondItem="8Fo-SJ-OSJ" secondAttribute="bottom" id="BdI-H5-tCw"/>
-                                    <constraint firstAttribute="trailing" secondItem="EBA-ge-2ad" secondAttribute="trailing" id="G4M-JO-pui"/>
-                                    <constraint firstItem="8Fo-SJ-OSJ" firstAttribute="top" secondItem="B90-Lb-BJp" secondAttribute="top" id="KIi-Vc-3yK"/>
-                                    <constraint firstItem="EBA-ge-2ad" firstAttribute="leading" secondItem="B90-Lb-BJp" secondAttribute="leading" id="MFK-Eg-0MV"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Fo-SJ-OSJ" secondAttribute="trailing" id="keW-Td-AyY"/>
-                                    <constraint firstAttribute="bottom" secondItem="bCJ-QL-T3k" secondAttribute="bottom" id="ld7-Qz-Tqi"/>
-                                    <constraint firstItem="bCJ-QL-T3k" firstAttribute="top" secondItem="EBA-ge-2ad" secondAttribute="bottom" id="odj-XU-33r"/>
-                                    <constraint firstItem="bCJ-QL-T3k" firstAttribute="leading" secondItem="B90-Lb-BJp" secondAttribute="leading" id="qBH-Ah-CXL"/>
-                                    <constraint firstAttribute="trailing" secondItem="bCJ-QL-T3k" secondAttribute="trailing" id="qcn-L9-NL7"/>
-                                    <constraint firstItem="8Fo-SJ-OSJ" firstAttribute="centerX" secondItem="B90-Lb-BJp" secondAttribute="centerX" id="zMi-h4-J2l"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="B90-Lb-BJp" firstAttribute="leading" secondItem="Ibw-70-2EN" secondAttribute="leading" id="aXN-xv-pdS"/>
-                            <constraint firstAttribute="bottom" secondItem="B90-Lb-BJp" secondAttribute="bottom" id="jb1-y4-16C"/>
-                            <constraint firstAttribute="trailing" secondItem="B90-Lb-BJp" secondAttribute="trailing" id="rEv-qI-ybP"/>
-                            <constraint firstItem="B90-Lb-BJp" firstAttribute="top" secondItem="oQ7-Ta-pTb" secondAttribute="top" id="ybh-EX-x9S"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="oQ7-Ta-pTb"/>
-                    </view>
-                    <connections>
-                        <outlet property="formScrollView" destination="bCJ-QL-T3k" id="BZf-9z-h4O"/>
-                        <outlet property="metaScrollView" destination="B90-Lb-BJp" id="Z8G-G2-4Ec"/>
-                        <outlet property="notesTextView" destination="52X-v7-ryN" id="GnI-bp-PrN"/>
-                        <outlet property="photoCapturePreview" destination="8Fo-SJ-OSJ" id="hE9-Le-yoh"/>
-                        <outlet property="priceTextField" destination="H9i-UH-qiq" id="fPr-y7-6TM"/>
-                        <outlet property="saveWineButton" destination="9ng-w2-hmg" id="XTd-X8-xN2"/>
-                        <outlet property="storeNameTextField" destination="EY0-6S-3VB" id="ZrY-az-OP5"/>
-                        <outlet property="wineNameTextField" destination="cg8-46-nmx" id="iUV-GO-Rae"/>
-                        <outlet property="wineTypeTextField" destination="3bs-jj-qdh" id="Igg-DA-An9"/>
-                        <segue destination="uQ9-nt-CPz" kind="show" identifier="fromAddWine" id="Kgx-xR-eUy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zM1-el-dPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1372" y="1766"/>
-        </scene>
-        <!--New WineVC-->
+        <!--Title-->
         <scene sceneID="AME-q4-QDS">
             <objects>
                 <viewController id="w9t-30-PAk" customClass="NewWineVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Iu-Ms-e47">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GL6-ZV-bjT">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL6-ZV-bjT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1z6-VW-L6t">
-                                        <rect key="frame" x="171" y="589" width="72" height="30"/>
+                                        <rect key="frame" x="172" y="748" width="72" height="30"/>
                                         <state key="normal" title="Save Wine">
                                             <color key="titleColor" red="0.42689045399999997" green="0.093096113159999994" blue="0.42632687250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -315,224 +112,216 @@
                                             <action selector="SaveBtnTapped:" destination="w9t-30-PAk" eventType="touchUpInside" id="SNh-xS-Hr3"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WineListIconBW" translatesAutoresizingMaskIntoConstraints="NO" id="Hbp-c1-17g">
-                                        <rect key="frame" x="6" y="12" width="229" height="208"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-yM-UIW">
-                                        <rect key="frame" x="237" y="12" width="158" height="100"/>
-                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add notes here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-LB-8Oq" userLabel="Notes View">
+                                        <rect key="frame" x="26" y="646" width="312" height="83"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="gII-W1-QBM"/>
-                                            <constraint firstAttribute="width" constant="158" id="rCh-fo-Map"/>
+                                            <constraint firstAttribute="height" constant="83" id="ast-qI-Y6Q"/>
                                         </constraints>
-                                        <state key="normal" title="Take New Photo" backgroundImage="wineBottlesPhoto">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="takePhotoWasTapped:" destination="w9t-30-PAk" eventType="touchUpInside" id="5b9-Z1-0lF"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Name (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucv-VH-93m" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="44" y="239" width="351" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="ehd-4L-Waj"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.75"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dx-SO-XO3">
-                                        <rect key="frame" x="237" y="119" width="158" height="100"/>
-                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="a7p-si-BmT"/>
-                                        </constraints>
-                                        <state key="normal" title="Photo From Library" backgroundImage="wineGlassesPhoto">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="choosePhotoWasTapped:" destination="w9t-30-PAk" eventType="touchUpInside" id="M0t-SN-hpJ"/>
-                                        </connections>
-                                    </button>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="CyN-hD-aNE">
+                                        <rect key="frame" x="30" y="413" width="206" height="215"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Name (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucv-VH-93m">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="19"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-fW-NXC">
+                                                <rect key="frame" x="0.0" y="49" width="36.666666666666664" height="19"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smg-cH-ycB">
+                                                <rect key="frame" x="0.0" y="98" width="83.333333333333329" height="19"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-Cc-Cuj">
+                                                <rect key="frame" x="0.0" y="147" width="41.333333333333336" height="19"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-SN-BKK">
+                                                <rect key="frame" x="0.0" y="196" width="92.333333333333329" height="19"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="0.75"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-SQ-Lii">
-                                        <rect key="frame" x="261" y="306" width="99" height="29"/>
+                                        <rect key="frame" x="266" y="461" width="104" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="4PT-yi-aiR"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="Yes"/>
                                             <segment title="No"/>
                                         </segments>
                                         <color key="tintColor" red="0.42689045402131975" green="0.093096113157620577" blue="0.42632687250963935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-4i-nao">
+                                        <rect key="frame" x="10" y="318" width="394" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dx-SO-XO3">
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Photo From Library" image="thumbnailsIcon">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="choosePhotoWasTapped:" destination="w9t-30-PAk" eventType="touchUpInside" id="M0t-SN-hpJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-yM-UIW">
+                                                <rect key="frame" x="197" y="0.0" width="197" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="  Take New Photo" image="cameraIcon">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="takePhotoWasTapped:" destination="w9t-30-PAk" eventType="touchUpInside" id="5b9-Z1-0lF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="EhO-cn-R3x"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WineListIconBW" translatesAutoresizingMaskIntoConstraints="NO" id="Hbp-c1-17g">
+                                        <rect key="frame" x="10" y="12" width="396" height="298"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="298" id="4fn-p3-D3Y"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRx-IP-wQD">
-                                        <rect key="frame" x="205" y="315" width="48" height="19"/>
+                                        <rect key="frame" x="201" y="470" width="50" height="19"/>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-Cc-Cuj" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="44" y="350" width="153" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="153" id="LuX-bD-Act"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.75"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wine Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smg-cH-ycB" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="44" y="400" width="351" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="CGF-vX-R2T"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.75"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-SN-BKK" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="44" y="450" width="351" height="51"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="51" id="6kU-iM-O91"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.75"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add notes here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-LB-8Oq" userLabel="Notes View">
-                                        <rect key="frame" x="39" y="513" width="308" height="68"/>
-                                        <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-fW-NXC" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="44" y="310" width="153" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="153" id="lPv-li-b80"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="0.75"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="smg-cH-ycB" firstAttribute="top" secondItem="b8e-Cc-Cuj" secondAttribute="bottom" constant="5" id="0ko-Rk-y7a"/>
-                                    <constraint firstItem="Ucv-VH-93m" firstAttribute="leading" secondItem="b8e-Cc-Cuj" secondAttribute="leading" id="1Wc-MW-pqy"/>
-                                    <constraint firstItem="1z6-VW-L6t" firstAttribute="centerX" secondItem="GL6-ZV-bjT" secondAttribute="centerX" id="1xT-4t-FLZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="mnF-LB-8Oq" secondAttribute="trailing" constant="49" id="2ch-6C-vcd"/>
-                                    <constraint firstItem="7dx-SO-XO3" firstAttribute="trailing" secondItem="CY3-yM-UIW" secondAttribute="trailing" id="5BL-GC-gCv"/>
-                                    <constraint firstItem="UKC-SQ-Lii" firstAttribute="leading" secondItem="VRx-IP-wQD" secondAttribute="trailing" constant="8" id="8xF-fI-U7y"/>
-                                    <constraint firstItem="b8e-Cc-Cuj" firstAttribute="top" secondItem="Ucv-VH-93m" secondAttribute="bottom" constant="59" id="DQs-m3-uF8"/>
-                                    <constraint firstItem="7dx-SO-XO3" firstAttribute="top" secondItem="CY3-yM-UIW" secondAttribute="bottom" constant="7" id="F0S-ud-COh"/>
-                                    <constraint firstItem="mnF-LB-8Oq" firstAttribute="top" secondItem="9DH-SN-BKK" secondAttribute="bottom" constant="12" id="FhK-lk-wZg"/>
-                                    <constraint firstItem="Ucv-VH-93m" firstAttribute="trailing" secondItem="CY3-yM-UIW" secondAttribute="trailing" id="GLe-hL-0ii"/>
-                                    <constraint firstItem="ZUk-fW-NXC" firstAttribute="leading" secondItem="b8e-Cc-Cuj" secondAttribute="leading" id="Gix-Qn-TqM"/>
-                                    <constraint firstItem="1z6-VW-L6t" firstAttribute="top" secondItem="GL6-ZV-bjT" secondAttribute="top" constant="589" id="HpG-7Y-dk7"/>
-                                    <constraint firstItem="b8e-Cc-Cuj" firstAttribute="leading" secondItem="smg-cH-ycB" secondAttribute="leading" id="Ozv-WO-nEq"/>
-                                    <constraint firstItem="9DH-SN-BKK" firstAttribute="trailing" secondItem="CY3-yM-UIW" secondAttribute="trailing" id="Qpt-aq-Za1"/>
-                                    <constraint firstItem="b8e-Cc-Cuj" firstAttribute="top" secondItem="ZUk-fW-NXC" secondAttribute="bottom" constant="8" symbolic="YES" id="T1e-qq-2fV"/>
-                                    <constraint firstAttribute="bottom" secondItem="1z6-VW-L6t" secondAttribute="bottom" constant="53" id="V62-Bn-FA7"/>
-                                    <constraint firstAttribute="trailing" secondItem="UKC-SQ-Lii" secondAttribute="trailing" constant="36" id="V8B-xd-AxS"/>
-                                    <constraint firstItem="Ucv-VH-93m" firstAttribute="top" secondItem="Hbp-c1-17g" secondAttribute="bottom" constant="19" id="WnM-Ws-N9G"/>
-                                    <constraint firstItem="smg-cH-ycB" firstAttribute="leading" secondItem="9DH-SN-BKK" secondAttribute="leading" id="XPU-yR-IoM"/>
-                                    <constraint firstItem="ZUk-fW-NXC" firstAttribute="baseline" secondItem="UKC-SQ-Lii" secondAttribute="baseline" id="YfY-ok-QIs"/>
-                                    <constraint firstItem="1z6-VW-L6t" firstAttribute="top" secondItem="mnF-LB-8Oq" secondAttribute="bottom" constant="8" id="ZNN-8j-2cq"/>
-                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leadingMargin" constant="-2" id="aXd-nN-pe9"/>
-                                    <constraint firstItem="CY3-yM-UIW" firstAttribute="trailing" secondItem="7dx-SO-XO3" secondAttribute="trailing" id="ahX-fc-N6c"/>
-                                    <constraint firstItem="Ucv-VH-93m" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leading" constant="44" id="b5M-b7-dyO"/>
-                                    <constraint firstItem="mnF-LB-8Oq" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leading" constant="39" id="c8g-Fz-tJq"/>
-                                    <constraint firstItem="smg-cH-ycB" firstAttribute="trailing" secondItem="9DH-SN-BKK" secondAttribute="trailing" id="ctP-U7-sdm"/>
-                                    <constraint firstItem="VRx-IP-wQD" firstAttribute="bottom" secondItem="UKC-SQ-Lii" secondAttribute="bottom" id="cwM-Ix-3Kc"/>
-                                    <constraint firstItem="Ucv-VH-93m" firstAttribute="top" secondItem="7dx-SO-XO3" secondAttribute="bottom" constant="20" id="eO0-P9-QGf"/>
-                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="top" secondItem="CY3-yM-UIW" secondAttribute="top" id="gRx-aW-i60"/>
-                                    <constraint firstItem="CY3-yM-UIW" firstAttribute="trailing" secondItem="GL6-ZV-bjT" secondAttribute="trailingMargin" constant="7" id="ibf-KT-uP6"/>
-                                    <constraint firstItem="smg-cH-ycB" firstAttribute="trailing" secondItem="CY3-yM-UIW" secondAttribute="trailing" id="jvQ-rU-ifQ"/>
-                                    <constraint firstItem="UKC-SQ-Lii" firstAttribute="top" secondItem="Ucv-VH-93m" secondAttribute="bottom" constant="15" id="lqn-1N-1fB"/>
-                                    <constraint firstItem="VRx-IP-wQD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZUk-fW-NXC" secondAttribute="trailing" constant="8" symbolic="YES" id="mvk-D5-We2"/>
-                                    <constraint firstItem="9DH-SN-BKK" firstAttribute="top" secondItem="smg-cH-ycB" secondAttribute="bottom" id="nf8-AI-dm9"/>
-                                    <constraint firstItem="CY3-yM-UIW" firstAttribute="leading" secondItem="7dx-SO-XO3" secondAttribute="leading" id="qDu-6D-gEv"/>
-                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="trailing" secondItem="b8e-Cc-Cuj" secondAttribute="trailing" constant="38" id="v34-33-vDu"/>
-                                    <constraint firstItem="smg-cH-ycB" firstAttribute="top" secondItem="UKC-SQ-Lii" secondAttribute="bottom" constant="66" id="vC3-v0-s7Y"/>
-                                    <constraint firstItem="CY3-yM-UIW" firstAttribute="leading" secondItem="Hbp-c1-17g" secondAttribute="trailing" constant="2" id="xJR-V9-1Ch"/>
-                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="top" secondItem="GL6-ZV-bjT" secondAttribute="top" constant="12" id="y8q-7l-DKj"/>
+                                    <constraint firstItem="UKC-SQ-Lii" firstAttribute="top" secondItem="qpP-4i-nao" secondAttribute="bottom" constant="83" id="8OW-7O-hp5"/>
+                                    <constraint firstAttribute="bottom" secondItem="1z6-VW-L6t" secondAttribute="bottom" constant="-175" id="9ki-lz-ERy"/>
+                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="trailing" secondItem="GL6-ZV-bjT" secondAttribute="trailingMargin" id="SHB-4I-w60"/>
+                                    <constraint firstItem="CyN-hD-aNE" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leading" constant="30" id="TJc-Mx-o5Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="mnF-LB-8Oq" secondAttribute="trailing" constant="76" id="UWE-TP-t9C"/>
+                                    <constraint firstItem="UKC-SQ-Lii" firstAttribute="leading" secondItem="CyN-hD-aNE" secondAttribute="trailing" constant="30" id="VUR-yj-F9E"/>
+                                    <constraint firstAttribute="trailing" secondItem="UKC-SQ-Lii" secondAttribute="trailing" constant="44" id="Vm5-Of-7Yj"/>
+                                    <constraint firstItem="qpP-4i-nao" firstAttribute="centerX" secondItem="GL6-ZV-bjT" secondAttribute="centerX" id="W7E-jU-L6E"/>
+                                    <constraint firstItem="VRx-IP-wQD" firstAttribute="leading" secondItem="CyN-hD-aNE" secondAttribute="trailing" constant="-35" id="YC3-YY-usn"/>
+                                    <constraint firstAttribute="trailing" secondItem="qpP-4i-nao" secondAttribute="trailing" constant="10" id="aB8-Mb-QZt"/>
+                                    <constraint firstItem="qpP-4i-nao" firstAttribute="top" secondItem="Hbp-c1-17g" secondAttribute="bottom" constant="8" id="blI-V4-Fl2"/>
+                                    <constraint firstItem="mnF-LB-8Oq" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leading" constant="26" id="eIi-pY-eHQ"/>
+                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="top" secondItem="GL6-ZV-bjT" secondAttribute="top" constant="12" id="ejP-cW-s5Y"/>
+                                    <constraint firstItem="VRx-IP-wQD" firstAttribute="bottom" secondItem="UKC-SQ-Lii" secondAttribute="bottom" id="ilO-yB-To2"/>
+                                    <constraint firstItem="Hbp-c1-17g" firstAttribute="leading" secondItem="qpP-4i-nao" secondAttribute="leading" id="o6K-GN-5rH"/>
+                                    <constraint firstItem="qpP-4i-nao" firstAttribute="leading" secondItem="GL6-ZV-bjT" secondAttribute="leading" constant="10" id="qce-ud-66L"/>
+                                    <constraint firstItem="UKC-SQ-Lii" firstAttribute="leading" secondItem="VRx-IP-wQD" secondAttribute="trailing" constant="15" id="rTk-CP-VEJ"/>
+                                    <constraint firstItem="1z6-VW-L6t" firstAttribute="centerX" secondItem="GL6-ZV-bjT" secondAttribute="centerX" constant="1" id="xAR-N0-Ygd"/>
+                                    <constraint firstItem="1z6-VW-L6t" firstAttribute="top" secondItem="mnF-LB-8Oq" secondAttribute="bottom" constant="19" id="yKY-do-pY8"/>
+                                    <constraint firstItem="mnF-LB-8Oq" firstAttribute="top" secondItem="CyN-hD-aNE" secondAttribute="bottom" constant="18" id="zFp-ek-U4b"/>
+                                    <constraint firstItem="CyN-hD-aNE" firstAttribute="top" secondItem="qpP-4i-nao" secondAttribute="bottom" constant="35" id="zcg-2T-AVc"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GL6-ZV-bjT" firstAttribute="leading" secondItem="2Iu-Ms-e47" secondAttribute="leadingMargin" id="Y0y-lB-hO7"/>
-                            <constraint firstItem="Z89-Ph-oHq" firstAttribute="trailing" secondItem="GL6-ZV-bjT" secondAttribute="trailing" constant="2" id="a3B-D7-45l"/>
-                            <constraint firstItem="Z89-Ph-oHq" firstAttribute="bottom" secondItem="GL6-ZV-bjT" secondAttribute="bottom" id="eLN-o5-gtw"/>
-                            <constraint firstItem="GL6-ZV-bjT" firstAttribute="top" secondItem="Z89-Ph-oHq" secondAttribute="top" id="kdU-Ul-MAd"/>
+                            <constraint firstItem="GL6-ZV-bjT" firstAttribute="bottom" secondItem="Z89-Ph-oHq" secondAttribute="bottom" id="Vew-tz-BjY"/>
+                            <constraint firstItem="GL6-ZV-bjT" firstAttribute="top" secondItem="Z89-Ph-oHq" secondAttribute="top" id="bDo-37-nVb"/>
+                            <constraint firstItem="Z89-Ph-oHq" firstAttribute="trailing" secondItem="GL6-ZV-bjT" secondAttribute="trailing" id="mTc-j1-1eA"/>
+                            <constraint firstItem="GL6-ZV-bjT" firstAttribute="leading" secondItem="Z89-Ph-oHq" secondAttribute="leading" id="wk9-Y0-Ock"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z89-Ph-oHq"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="qXZ-CY-R75">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Ahi-WJ-tGU">
+                            <connections>
+                                <action selector="doneBtnTapped:" destination="w9t-30-PAk" id="Ci7-r1-bYi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="choosePhotoBtn" destination="7dx-SO-XO3" id="Amr-Zu-KbH"/>
                         <outlet property="likeWineControl" destination="UKC-SQ-Lii" id="rqp-6J-VGV"/>
@@ -551,102 +340,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shu-kv-vLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628.985507246377" y="1278.2608695652175"/>
-        </scene>
-        <!--UserLogIn-->
-        <scene sceneID="S15-aw-qLO">
-            <objects>
-                <viewController title="UserLogIn" id="mVN-5o-PbF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NoD-EH-D7Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="pd9-4O-VM5">
-                                <rect key="frame" x="40" y="335.66666666666669" width="334" height="65"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-77-xBL">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="65"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH3-2n-8fY">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="20"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xK-Pw-cjo">
-                                                <rect key="frame" x="0.0" y="45" width="85" height="20"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="CJW-i0-vT5">
-                                        <rect key="frame" x="98" y="1" width="236" height="63"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-JW-LRO">
-                                                <rect key="frame" x="0.0" y="0.0" width="236" height="22"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iF6-e9-oq0">
-                                                <rect key="frame" x="0.0" y="41" width="236" height="22"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ex-Y9-hzf">
-                                <rect key="frame" x="182.66666666666666" y="432.66666666666669" width="49" height="32"/>
-                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WineList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-hj-dM0">
-                                <rect key="frame" x="0.0" y="163.33333333333334" width="414" height="56.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="48"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="8ex-Y9-hzf" firstAttribute="top" secondItem="pd9-4O-VM5" secondAttribute="bottom" constant="32" id="Lcd-yU-5q5"/>
-                            <constraint firstItem="pd9-4O-VM5" firstAttribute="centerX" secondItem="NoD-EH-D7Y" secondAttribute="centerX" id="O9m-AL-rJt"/>
-                            <constraint firstAttribute="bottom" secondItem="S7j-hj-dM0" secondAttribute="bottom" constant="516" id="Tst-qu-UQu"/>
-                            <constraint firstItem="pd9-4O-VM5" firstAttribute="centerY" secondItem="NoD-EH-D7Y" secondAttribute="centerY" id="VW4-aY-NYX"/>
-                            <constraint firstItem="egs-uD-gDs" firstAttribute="trailing" secondItem="S7j-hj-dM0" secondAttribute="trailing" id="dC1-kL-JbF"/>
-                            <constraint firstItem="8ex-Y9-hzf" firstAttribute="centerX" secondItem="NoD-EH-D7Y" secondAttribute="centerX" id="iPn-LW-CCN"/>
-                            <constraint firstItem="pd9-4O-VM5" firstAttribute="leading" secondItem="egs-uD-gDs" secondAttribute="leading" constant="40" id="oSk-mf-i1c"/>
-                            <constraint firstItem="S7j-hj-dM0" firstAttribute="leading" secondItem="egs-uD-gDs" secondAttribute="leading" id="u4g-Aq-JGH"/>
-                            <constraint firstItem="S7j-hj-dM0" firstAttribute="centerX" secondItem="NoD-EH-D7Y" secondAttribute="centerX" id="vq2-zu-Y8Y"/>
-                            <constraint firstItem="egs-uD-gDs" firstAttribute="trailing" secondItem="pd9-4O-VM5" secondAttribute="trailing" constant="40" id="yNy-v3-LvP"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="egs-uD-gDs"/>
-                    </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMainMenu" id="Rsc-65-yEg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rgz-iP-gqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-143.19999999999999" y="87.706146926536732"/>
+            <point key="canvasLocation" x="1212" y="1366.8665667166417"/>
         </scene>
         <!--WineList-->
         <scene sceneID="Vkv-j1-deB">
             <objects>
                 <viewController title="WineList" id="uQ9-nt-CPz" customClass="WineListVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mar-aH-gzd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKW-BQ-QII">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wineCell" textLabel="7Qs-GI-dmt" detailTextLabel="wzx-a0-cHf" style="IBUITableViewCellStyleSubtitle" id="KEy-h8-OpC">
@@ -680,15 +385,17 @@
                                 </connections>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEe-3U-ulJ">
-                                <rect key="frame" x="10" y="320" width="394" height="416"/>
+                                <rect key="frame" x="10" y="388" width="394" height="474"/>
                                 <connections>
                                     <outlet property="dataSource" destination="uQ9-nt-CPz" id="y82-7n-ZFp"/>
                                     <outlet property="delegate" destination="uQ9-nt-CPz" id="VrP-QK-L3R"/>
                                 </connections>
                             </pickerView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIz-JL-2aD">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIz-JL-2aD">
+                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OmK-7m-Wfy"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="X8c-V4-wXR"/>
                                     <barButtonItem title="Filter Wines" id="ScJ-G2-YZT">
@@ -699,42 +406,62 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8jP-0F-ZLE"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-xd-gO2">
+                                <rect key="frame" x="167" y="752" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="UXf-bc-dcj"/>
+                                    <constraint firstAttribute="height" constant="80" id="ttB-1q-gL3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-ExtraLight" family="Raleway" pointSize="69"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addWineWasTapped:" destination="uQ9-nt-CPz" eventType="touchUpInside" id="PM6-yn-Zzw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="SIz-JL-2aD" firstAttribute="trailing" secondItem="JKW-BQ-QII" secondAttribute="trailing" id="07C-Wa-Dfa"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="leading" secondItem="C8M-Ey-VOu" secondAttribute="leading" constant="10" id="27T-ds-RD1"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="top" secondItem="C8M-Ey-VOu" secondAttribute="top" constant="300" id="El3-oP-4Nb"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="trailing" secondItem="JKW-BQ-QII" secondAttribute="trailing" id="KSe-9c-lRN"/>
                             <constraint firstItem="JKW-BQ-QII" firstAttribute="leading" secondItem="C8M-Ey-VOu" secondAttribute="leading" id="MPB-oi-CHb"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="bottom" secondItem="yEe-3U-ulJ" secondAttribute="bottom" id="Nku-zU-JSo"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="bottom" secondItem="JKW-BQ-QII" secondAttribute="bottom" id="Wdn-fN-4nw"/>
+                            <constraint firstAttribute="bottom" secondItem="SIz-JL-2aD" secondAttribute="bottom" id="aXw-8W-918"/>
+                            <constraint firstItem="SIz-JL-2aD" firstAttribute="leading" secondItem="JKW-BQ-QII" secondAttribute="leading" id="fYc-yA-P8a"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="trailing" secondItem="C8M-Ey-VOu" secondAttribute="trailing" constant="-10" id="jZU-m9-mKv"/>
                             <constraint firstItem="JKW-BQ-QII" firstAttribute="top" secondItem="C8M-Ey-VOu" secondAttribute="top" id="lWv-qH-MdO"/>
+                            <constraint firstItem="SIz-JL-2aD" firstAttribute="top" secondItem="1dH-xd-gO2" secondAttribute="bottom" constant="20" id="pR2-rC-qSW"/>
+                            <constraint firstItem="1dH-xd-gO2" firstAttribute="centerX" secondItem="mar-aH-gzd" secondAttribute="centerX" id="tjD-QH-Wb4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C8M-Ey-VOu"/>
                     </view>
                     <connections>
+                        <outlet property="addWineBtn" destination="1dH-xd-gO2" id="Io6-Zc-C7v"/>
                         <outlet property="filterButton" destination="ScJ-G2-YZT" id="Fbs-UY-G66"/>
                         <outlet property="sortOptionsPickerView" destination="yEe-3U-ulJ" id="QeU-eM-4CE"/>
                         <outlet property="toolbar" destination="SIz-JL-2aD" id="Xy1-w5-IeH"/>
                         <outlet property="wineListTableView" destination="JKW-BQ-QII" id="eYv-wC-EC7"/>
                         <segue destination="2ad-cS-8ix" kind="show" identifier="toWineDetail" id="DKe-QL-e6p"/>
+                        <segue destination="w9t-30-PAk" kind="show" identifier="toAddWine" id="Jlz-Bn-r6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6n-DP-qTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1701.5999999999999" y="538.38080959520244"/>
+            <point key="canvasLocation" x="1213" y="362"/>
         </scene>
         <!--WineDetail-->
         <scene sceneID="DAx-4h-763">
             <objects>
                 <viewController title="WineDetail" id="2ad-cS-8ix" customClass="WineDetailVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahd-bi-j9M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-QJ-YpJ">
-                                <rect key="frame" x="0.0" y="85.666666666666686" width="414" height="650.33333333333326"/>
+                                <rect key="frame" x="0.0" y="153.66666666666669" width="414" height="708.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4qc-I8-QEM" userLabel="Label Names">
                                         <rect key="frame" x="35" y="316" width="55" height="94"/>
@@ -752,7 +479,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85L-sC-Pfx">
-                                                <rect key="frame" x="0.0" y="72" width="55" height="22"/>
+                                                <rect key="frame" x="0.0" y="71.999999999999943" width="55" height="22"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -784,7 +511,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-Sd-Rmk">
-                                                <rect key="frame" x="0.0" y="72" width="47" height="22"/>
+                                                <rect key="frame" x="0.0" y="71.999999999999943" width="47" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="t9I-mI-7sk"/>
                                                 </constraints>
@@ -807,7 +534,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Image Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ko-6D-HFS">
-                                                <rect key="frame" x="0.0" y="134" width="414" height="21"/>
+                                                <rect key="frame" x="0.0" y="134.66666666666666" width="414" height="21"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -815,7 +542,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="1ko-6D-HFS" firstAttribute="centerY" secondItem="GLu-ZB-9yc" secondAttribute="centerY" id="Hvj-t3-8Bs"/>
-                                            <constraint firstAttribute="centerY" secondItem="1ko-6D-HFS" secondAttribute="centerY" constant="0.5" id="IXB-iF-0Qq"/>
                                             <constraint firstItem="GLu-ZB-9yc" firstAttribute="centerY" secondItem="cks-YB-UQV" secondAttribute="centerY" id="Ifg-wc-Qcq"/>
                                             <constraint firstAttribute="trailing" secondItem="GLu-ZB-9yc" secondAttribute="trailing" constant="20" id="ObT-By-uYN"/>
                                             <constraint firstItem="GLu-ZB-9yc" firstAttribute="top" secondItem="cks-YB-UQV" secondAttribute="top" constant="20" id="RiC-W8-h7u"/>
@@ -839,9 +565,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="YhB-M3-EZ2" firstAttribute="top" secondItem="4qc-I8-QEM" secondAttribute="top" id="1Dd-1x-JwR"/>
                                     <constraint firstItem="cks-YB-UQV" firstAttribute="top" secondItem="d9h-QJ-YpJ" secondAttribute="top" id="1z6-DY-JQF"/>
+                                    <constraint firstItem="ubp-s8-Zeh" firstAttribute="leading" secondItem="F3j-MP-GXl" secondAttribute="trailing" constant="35" id="5pu-Fw-eP1"/>
                                     <constraint firstAttribute="trailing" secondItem="YhB-M3-EZ2" secondAttribute="trailing" constant="35" id="BbN-CW-HSZ"/>
                                     <constraint firstAttribute="bottom" secondItem="ubp-s8-Zeh" secondAttribute="bottom" constant="30.333333333333258" id="E4e-RC-K2I"/>
                                     <constraint firstItem="F3j-MP-GXl" firstAttribute="leading" secondItem="4qc-I8-QEM" secondAttribute="leading" id="FcJ-yK-0qj"/>
@@ -850,7 +578,7 @@
                                     <constraint firstAttribute="bottom" secondItem="YhB-M3-EZ2" secondAttribute="bottom" constant="138.33333333333326" id="Lrh-W5-vh8"/>
                                     <constraint firstItem="YhB-M3-EZ2" firstAttribute="top" secondItem="cks-YB-UQV" secondAttribute="bottom" constant="26" id="N5Q-TU-oAj"/>
                                     <constraint firstItem="cks-YB-UQV" firstAttribute="leading" secondItem="d9h-QJ-YpJ" secondAttribute="leading" id="Q7E-ax-Ox3"/>
-                                    <constraint firstItem="ubp-s8-Zeh" firstAttribute="leading" secondItem="F3j-MP-GXl" secondAttribute="trailing" constant="35" id="aCT-ye-3Cd"/>
+                                    <constraint firstItem="ubp-s8-Zeh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F3j-MP-GXl" secondAttribute="trailing" constant="8" symbolic="YES" id="aCT-ye-3Cd"/>
                                     <constraint firstAttribute="trailing" secondItem="cks-YB-UQV" secondAttribute="trailing" id="dfg-yb-oyy"/>
                                     <constraint firstAttribute="trailing" secondItem="ubp-s8-Zeh" secondAttribute="trailing" constant="38" id="gbJ-ja-BRO"/>
                                     <constraint firstItem="ubp-s8-Zeh" firstAttribute="top" secondItem="F3j-MP-GXl" secondAttribute="top" constant="-5" id="mFR-At-h7Z"/>
@@ -861,18 +589,19 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wine name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-Ag-raL">
-                                <rect key="frame" x="0.0" y="32" width="414" height="23.666666666666671"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="23.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
                                 <color key="textColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="liked?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FB-MY-k9j">
-                                <rect key="frame" x="183.33333333333334" y="57.666666666666664" width="48.333333333333343" height="21.333333333333336"/>
+                                <rect key="frame" x="183" y="125.66666666666667" width="48.333333333333343" height="21.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                 <color key="textColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8S7-Ag-raL" firstAttribute="top" secondItem="ODJ-O7-gS6" secondAttribute="top" constant="12" id="02a-5J-x3K"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="top" secondItem="8S7-Ag-raL" secondAttribute="bottom" constant="30" id="Bmx-bM-glq"/>
@@ -904,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bei-2g-AIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688.4057971014495" y="537.22826086956525"/>
+            <point key="canvasLocation" x="2432" y="362"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCX-4s-iCM">
@@ -912,7 +641,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KHx-Xs-8v6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WMD-BN-Rhx">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -929,11 +658,10 @@
         <image name="WineListIconBW" width="801" height="801"/>
         <image name="WineListMenuAddIcon(stemlessWhite)" width="600" height="393"/>
         <image name="WineListMenuIcons(stemlesswhite)" width="739" height="471"/>
-        <image name="wineBottlesPhoto" width="1618" height="1078"/>
-        <image name="wineGlassesPhoto" width="2000" height="1333"/>
+        <image name="cameraIcon" width="33" height="33"/>
+        <image name="thumbnailsIcon" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kgx-xR-eUy"/>
-        <segue reference="FXK-2a-KVF"/>
+        <segue reference="Jlz-Bn-r6E"/>
     </inferredMetricsTieBreakers>
 </document>

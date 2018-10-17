@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B9EA30A6C7490B5C1043AD57 /* Pods_WineList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C228C65D85C68996A53123 /* Pods_WineList.framework */; };
 		E64A0CCB211A1F7A00870439 /* WineListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A0CCA211A1F7A00870439 /* WineListUITests.swift */; };
+		E64E906E215AC765002D37B0 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E906D215AC765002D37B0 /* ConnectionManager.swift */; };
 		E6701ADE210F8EAF004E289B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6701ADD210F8EAF004E289B /* CloudKit.framework */; };
 		E6AE66402108C00D00C93A34 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE663F2108C00000C93A34 /* Quicksand-Light.otf */; };
 		E6AE66542108C1E800C93A34 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664F2108C1A700C93A34 /* Raleway-Black.ttf */; };
@@ -29,14 +30,25 @@
 		E6AE66632108C1F600C93A34 /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66462108C1A500C93A34 /* Raleway-SemiBoldItalic.ttf */; };
 		E6AE66642108C1F600C93A34 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE664D2108C1A600C93A34 /* Raleway-Thin.ttf */; };
 		E6AE66652108C1F600C93A34 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6AE66422108C1A500C93A34 /* Raleway-ThinItalic.ttf */; };
+		E6B48C1D21549F130086B561 /* TextFieldFX.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B48C1B21549F130086B561 /* TextFieldFX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6B48C2021549F130086B561 /* TextFieldFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B48C1921549F130086B561 /* TextFieldFX.framework */; };
+		E6B48C2121549F130086B561 /* TextFieldFX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6B48C1921549F130086B561 /* TextFieldFX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E6B48C332154A6E90086B561 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C272154A6E70086B561 /* MadokaTextField.swift */; };
+		E6B48C342154A6E90086B561 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C282154A6E70086B561 /* KaedeTextField.swift */; };
+		E6B48C352154A6E90086B561 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C292154A6E70086B561 /* JiroTextField.swift */; };
+		E6B48C362154A6E90086B561 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C2A2154A6E70086B561 /* YoshikoTextField.swift */; };
+		E6B48C372154A6E90086B561 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C2B2154A6E70086B561 /* IsaoTextField.swift */; };
+		E6B48C392154A6E90086B561 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C2D2154A6E80086B561 /* MinoruTextField.swift */; };
+		E6B48C3B2154A6E90086B561 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C2F2154A6E80086B561 /* TextFieldEffects.swift */; };
+		E6B48C3C2154A6E90086B561 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C302154A6E80086B561 /* HoshiTextField.swift */; };
+		E6B48C3D2154A6E90086B561 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C312154A6E80086B561 /* AkiraTextField.swift */; };
+		E6B48C3E2154A6E90086B561 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B48C322154A6E80086B561 /* YokoTextField.swift */; };
 		E6BF5D5F20C38D5300148C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */; };
 		E6BF5D6120C38D5300148C18 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */; };
 		E6BF5D6420C38D5300148C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6220C38D5300148C18 /* Main.storyboard */; };
-		E6BF5D6720C38D5300148C18 /* WineList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D6520C38D5300148C18 /* WineList.xcdatamodeld */; };
 		E6BF5D6920C38D5500148C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6820C38D5500148C18 /* Assets.xcassets */; };
 		E6BF5D6C20C38D5500148C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF5D6A20C38D5500148C18 /* LaunchScreen.storyboard */; };
 		E6BF5D7420C3A64400148C18 /* WineListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7320C3A64400148C18 /* WineListVC.swift */; };
-		E6BF5D7620C3A66100148C18 /* AddWineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7520C3A66100148C18 /* AddWineVC.swift */; };
 		E6BF5D7820C3A67F00148C18 /* WineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */; };
 		E6CE76DB210B8EFE00FB04E7 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */; };
 		E6D84D2E215335BE0080BAD7 /* NewWineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */; };
@@ -50,7 +62,28 @@
 			remoteGlobalIDString = E6BF5D5A20C38D5300148C18;
 			remoteInfo = WineList;
 		};
+		E6B48C1E21549F130086B561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6BF5D5320C38D5300148C18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6B48C1821549F130086B561;
+			remoteInfo = TextFieldFX;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6DF1D7121549AF700437040 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E6B48C2121549F130086B561 /* TextFieldFX.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		18EAFDAAA31B522BCB1E4C66 /* Pods-WineList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineList.release.xcconfig"; path = "Pods/Target Support Files/Pods-WineList/Pods-WineList.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +92,7 @@
 		E64A0CC8211A1F7A00870439 /* WineListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WineListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64A0CCA211A1F7A00870439 /* WineListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListUITests.swift; sourceTree = "<group>"; };
 		E64A0CCC211A1F7A00870439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64E906D215AC765002D37B0 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConnectionManager.swift; path = /Users/jonboling/Documents/WineList/WineList/ConnectionManager.swift; sourceTree = "<absolute>"; };
 		E6701ADC210F8EAA004E289B /* WineList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WineList.entitlements; sourceTree = "<group>"; };
 		E6701ADD210F8EAF004E289B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E6AE663F2108C00000C93A34 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
@@ -80,16 +114,27 @@
 		E6AE66512108C1A700C93A34 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E6AE66522108C1A700C93A34 /* Raleway-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		E6AE66532108C1A700C93A34 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
+		E6B48C1921549F130086B561 /* TextFieldFX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextFieldFX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B48C1B21549F130086B561 /* TextFieldFX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldFX.h; sourceTree = "<group>"; };
+		E6B48C1C21549F130086B561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B48C272154A6E70086B561 /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
+		E6B48C282154A6E70086B561 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		E6B48C292154A6E70086B561 /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
+		E6B48C2A2154A6E70086B561 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
+		E6B48C2B2154A6E70086B561 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
+		E6B48C2D2154A6E80086B561 /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
+		E6B48C2F2154A6E80086B561 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
+		E6B48C302154A6E80086B561 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		E6B48C312154A6E80086B561 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		E6B48C322154A6E80086B561 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
 		E6BF5D5B20C38D5300148C18 /* WineList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		E6BF5D6320C38D5300148C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E6BF5D6620C38D5300148C18 /* WineList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WineList.xcdatamodel; sourceTree = "<group>"; };
 		E6BF5D6820C38D5500148C18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BF5D6B20C38D5500148C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6BF5D6D20C38D5500148C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6BF5D7320C3A64400148C18 /* WineListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListVC.swift; sourceTree = "<group>"; };
-		E6BF5D7520C3A66100148C18 /* AddWineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineVC.swift; sourceTree = "<group>"; };
 		E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailVC.swift; sourceTree = "<group>"; };
 		E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWineVC.swift; sourceTree = "<group>"; };
@@ -103,10 +148,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B48C1621549F130086B561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6BF5D5820C38D5300148C18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B48C2021549F130086B561 /* TextFieldFX.framework in Frameworks */,
 				B9EA30A6C7490B5C1043AD57 /* Pods_WineList.framework in Frameworks */,
 				E6701ADE210F8EAF004E289B /* CloudKit.framework in Frameworks */,
 			);
@@ -131,6 +184,33 @@
 				E64A0CCC211A1F7A00870439 /* Info.plist */,
 			);
 			path = WineListUITests;
+			sourceTree = "<group>";
+		};
+		E64E906A215AC6F4002D37B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E64E906B215AC706002D37B0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */,
+				E6BF5D7320C3A64400148C18 /* WineListVC.swift */,
+				E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */,
+				E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E64E906C215AC71E002D37B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E64E906D215AC765002D37B0 /* ConnectionManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E6AE66412108C17D00C93A34 /* Resources */ = {
@@ -159,11 +239,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E6B48C1A21549F130086B561 /* TextFieldFX */ = {
+			isa = PBXGroup;
+			children = (
+				E6B48C312154A6E80086B561 /* AkiraTextField.swift */,
+				E6B48C302154A6E80086B561 /* HoshiTextField.swift */,
+				E6B48C2B2154A6E70086B561 /* IsaoTextField.swift */,
+				E6B48C292154A6E70086B561 /* JiroTextField.swift */,
+				E6B48C282154A6E70086B561 /* KaedeTextField.swift */,
+				E6B48C272154A6E70086B561 /* MadokaTextField.swift */,
+				E6B48C2D2154A6E80086B561 /* MinoruTextField.swift */,
+				E6B48C2F2154A6E80086B561 /* TextFieldEffects.swift */,
+				E6B48C322154A6E80086B561 /* YokoTextField.swift */,
+				E6B48C2A2154A6E70086B561 /* YoshikoTextField.swift */,
+				E6B48C1B21549F130086B561 /* TextFieldFX.h */,
+				E6B48C1C21549F130086B561 /* Info.plist */,
+			);
+			path = TextFieldFX;
+			sourceTree = "<group>";
+		};
 		E6BF5D5220C38D5300148C18 = {
 			isa = PBXGroup;
 			children = (
 				E6BF5D5D20C38D5300148C18 /* WineList */,
 				E64A0CC9211A1F7A00870439 /* WineListUITests */,
+				E6B48C1A21549F130086B561 /* TextFieldFX */,
 				E6BF5D5C20C38D5300148C18 /* Products */,
 				FAEB9A2942D86F08590BA735 /* Pods */,
 				68DAC2C5C4422E8F038BD458 /* Frameworks */,
@@ -175,6 +275,7 @@
 			children = (
 				E6BF5D5B20C38D5300148C18 /* WineList.app */,
 				E64A0CC8211A1F7A00870439 /* WineListUITests.xctest */,
+				E6B48C1921549F130086B561 /* TextFieldFX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,17 +286,13 @@
 				E6701ADC210F8EAA004E289B /* WineList.entitlements */,
 				E6BF5D5E20C38D5300148C18 /* AppDelegate.swift */,
 				E6AE66412108C17D00C93A34 /* Resources */,
-				E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */,
-				E6BF5D7320C3A64400148C18 /* WineListVC.swift */,
-				E6BF5D7520C3A66100148C18 /* AddWineVC.swift */,
-				E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */,
-				E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */,
+				E64E906A215AC6F4002D37B0 /* Extensions */,
+				E64E906C215AC71E002D37B0 /* Model */,
+				E64E906B215AC706002D37B0 /* ViewControllers */,
 				E6BF5D6220C38D5300148C18 /* Main.storyboard */,
-				E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */,
 				E6BF5D6820C38D5500148C18 /* Assets.xcassets */,
 				E6BF5D6A20C38D5500148C18 /* LaunchScreen.storyboard */,
 				E6BF5D6D20C38D5500148C18 /* Info.plist */,
-				E6BF5D6520C38D5300148C18 /* WineList.xcdatamodeld */,
 			);
 			path = WineList;
 			sourceTree = "<group>";
@@ -210,6 +307,17 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E6B48C1421549F130086B561 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B48C1D21549F130086B561 /* TextFieldFX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		E64A0CC7211A1F7A00870439 /* WineListUITests */ = {
@@ -230,6 +338,24 @@
 			productReference = E64A0CC8211A1F7A00870439 /* WineListUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E6B48C1821549F130086B561 /* TextFieldFX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B48C2421549F130086B561 /* Build configuration list for PBXNativeTarget "TextFieldFX" */;
+			buildPhases = (
+				E6B48C1421549F130086B561 /* Headers */,
+				E6B48C1521549F130086B561 /* Sources */,
+				E6B48C1621549F130086B561 /* Frameworks */,
+				E6B48C1721549F130086B561 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextFieldFX;
+			productName = TextFieldFX;
+			productReference = E6B48C1921549F130086B561 /* TextFieldFX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E6BF5D5A20C38D5300148C18 /* WineList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6BF5D7020C38D5500148C18 /* Build configuration list for PBXNativeTarget "WineList" */;
@@ -239,10 +365,12 @@
 				E6BF5D5820C38D5300148C18 /* Frameworks */,
 				E6BF5D5920C38D5300148C18 /* Resources */,
 				8587A9D5D5FB49D1240FDD78 /* [CP] Embed Pods Frameworks */,
+				E6DF1D7121549AF700437040 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E6B48C1F21549F130086B561 /* PBXTargetDependency */,
 			);
 			name = WineList;
 			productName = WineList;
@@ -261,10 +389,15 @@
 				TargetAttributes = {
 					E64A0CC7211A1F7A00870439 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = E6BF5D5A20C38D5300148C18;
+					};
+					E6B48C1821549F130086B561 = {
+						CreatedOnToolsVersion = 10.0;
 					};
 					E6BF5D5A20C38D5300148C18 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -291,12 +424,20 @@
 			targets = (
 				E6BF5D5A20C38D5300148C18 /* WineList */,
 				E64A0CC7211A1F7A00870439 /* WineListUITests */,
+				E6B48C1821549F130086B561 /* TextFieldFX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E64A0CC6211A1F7A00870439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B48C1721549F130086B561 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,12 +502,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WineList/Pods-WineList-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,6 +525,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B48C1521549F130086B561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B48C3B2154A6E90086B561 /* TextFieldEffects.swift in Sources */,
+				E6B48C3E2154A6E90086B561 /* YokoTextField.swift in Sources */,
+				E6B48C362154A6E90086B561 /* YoshikoTextField.swift in Sources */,
+				E6B48C342154A6E90086B561 /* KaedeTextField.swift in Sources */,
+				E6B48C3C2154A6E90086B561 /* HoshiTextField.swift in Sources */,
+				E6B48C332154A6E90086B561 /* MadokaTextField.swift in Sources */,
+				E6B48C352154A6E90086B561 /* JiroTextField.swift in Sources */,
+				E6B48C3D2154A6E90086B561 /* AkiraTextField.swift in Sources */,
+				E6B48C372154A6E90086B561 /* IsaoTextField.swift in Sources */,
+				E6B48C392154A6E90086B561 /* MinoruTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6BF5D5720C38D5300148C18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,8 +551,7 @@
 				E6CE76DB210B8EFE00FB04E7 /* KeyboardExtension.swift in Sources */,
 				E6BF5D6120C38D5300148C18 /* MainMenuVC.swift in Sources */,
 				E6BF5D5F20C38D5300148C18 /* AppDelegate.swift in Sources */,
-				E6BF5D7620C3A66100148C18 /* AddWineVC.swift in Sources */,
-				E6BF5D6720C38D5300148C18 /* WineList.xcdatamodeld in Sources */,
+				E64E906E215AC765002D37B0 /* ConnectionManager.swift in Sources */,
 				E6BF5D7420C3A64400148C18 /* WineListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +563,11 @@
 			isa = PBXTargetDependency;
 			target = E6BF5D5A20C38D5300148C18 /* WineList */;
 			targetProxy = E64A0CCD211A1F7A00870439 /* PBXContainerItemProxy */;
+		};
+		E6B48C1F21549F130086B561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6B48C1821549F130086B561 /* TextFieldFX */;
+			targetProxy = E6B48C1E21549F130086B561 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -442,7 +604,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = waltboling.WineListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WineList;
 			};
@@ -461,9 +623,70 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = waltboling.WineListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WineList;
+			};
+			name = Release;
+		};
+		E6B48C2221549F130086B561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q24H7SU84Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TextFieldFX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = waltboling.TextFieldFX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E6B48C2321549F130086B561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q24H7SU84Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TextFieldFX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = waltboling.TextFieldFX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -585,18 +808,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E550A05FD1283853CD1B200 /* Pods-WineList.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WineList/WineList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q24H7SU84Q;
 				INFOPLIST_FILE = WineList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = waltboling.WineList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -605,18 +830,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18EAFDAAA31B522BCB1E4C66 /* Pods-WineList.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WineList/WineList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q24H7SU84Q;
 				INFOPLIST_FILE = WineList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = waltboling.WineList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -629,6 +856,15 @@
 			buildConfigurations = (
 				E64A0CCF211A1F7A00870439 /* Debug */,
 				E64A0CD0211A1F7A00870439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B48C2421549F130086B561 /* Build configuration list for PBXNativeTarget "TextFieldFX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B48C2221549F130086B561 /* Debug */,
+				E6B48C2321549F130086B561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -652,19 +888,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E6BF5D6520C38D5300148C18 /* WineList.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E6BF5D6620C38D5300148C18 /* WineList.xcdatamodel */,
-			);
-			currentVersion = E6BF5D6620C38D5300148C18 /* WineList.xcdatamodel */;
-			path = WineList.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E6BF5D5320C38D5300148C18 /* Project object */;
 }
