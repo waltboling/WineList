@@ -193,15 +193,23 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             if let like = wine["likeIndex"] as? Int {
                 if like == 0 {
                    // likeLabel = "Liked!"
-                    wineCell.detailTextLabel?.textColor = .flatMintDark
+                    //wineCell.detailTextLabel?.textColor = .flatMintDark
+                    wineCell.imageView?.image = UIImage(named: "greenThumbsUpIcon.png")
                 } else if like == 1 {
                     //likeLabel = "Disliked!"
-                    wineCell.detailTextLabel?.textColor = .flatRed
+                    //wineCell.detailTextLabel?.textColor = .flatRed
+                    wineCell.imageView?.image = UIImage(named: "redThumbsDownIcon.png")
+                } else {
+                    //sets an invisible dummy image so that text looks uniform throughout list
+                    wineCell.imageView?.image = UIImage(named: "thumbsUpIcon.png")
+                    wineCell.imageView?.alpha = 0.0
                 }
             }
             //detailString = "\(typeLabel ?? "") \(likeLabel ?? "")"
             detailString = "\(yearLabel ?? "") \(typeLabel ?? "")"
             wineCell.detailTextLabel?.text = detailString!
+            wineCell.detailTextLabel?.textColor = UIColor.darkText
+            wineCell.detailTextLabel?.font = UIFont(name: "Raleway-Light", size: 13)
         }
         
         return wineCell

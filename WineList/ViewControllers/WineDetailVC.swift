@@ -29,9 +29,11 @@ class WineDetailVC: UIViewController {
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var noImageLabel: UILabel!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var thumbsUpDownImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+          likeStatus.isHidden = true
     
         if let wine = selectedWine {
             let wineName = wine["wineName"] as! String
@@ -43,14 +45,20 @@ class WineDetailVC: UIViewController {
             self.notesTextView.text = wine["userNotes"] as? String
             if let likeIndex = wine["likeIndex"] as? Int {
                 if likeIndex == 0 {
-                    self.likeStatus.text = "Liked!"
-                    self.likeStatus.textColor = .flatMint
+                    //self.likeStatus.text = "Liked!"
+                    //self.likeStatus.textColor = .flatMint
+                    self.thumbsUpDownImgView.image = UIImage(named: "greenThumbsUpIcon.png")
+                } else if likeIndex == 1 {
+                   // self.likeStatus.text = "Disliked!"
+                    //self.likeStatus.textColor = .flatRed
+                    thumbsUpDownImgView.image = UIImage(named: "redThumbsDownIcon.png")
                 } else {
-                    self.likeStatus.text = "Disliked!"
-                    self.likeStatus.textColor = .flatRed
+                    thumbsUpDownImgView.isHidden = true
+                    likeStatus.isHidden = true
                 }
             } else {
                 self.likeStatus.text = "n/a"
+                self.thumbsUpDownImgView.isHidden = true
             }
             
             //fetch wine image and configure imageview
@@ -76,6 +84,6 @@ class WineDetailVC: UIViewController {
             }
         }
         
-        view.backgroundColor = .white
+        //view.backgroundColor = .white
     }
 }

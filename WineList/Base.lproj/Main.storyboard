@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WineList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITD-Kk-DHG">
-                                <rect key="frame" x="115.00000000000001" y="233" width="184.33333333333337" height="56"/>
+                                <rect key="frame" x="111.33333333333333" y="233" width="191.66666666666669" height="56"/>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="223" y="790"/>
         </scene>
-        <!--Title-->
+        <!--Add New Wine-->
         <scene sceneID="AME-q4-QDS">
             <objects>
-                <viewController id="w9t-30-PAk" customClass="NewWineVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add New Wine" id="w9t-30-PAk" customClass="NewWineVC" customModule="WineList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Iu-Ms-e47">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-SQ-Lii">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-SQ-Lii">
                                         <rect key="frame" x="266" y="461" width="104" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="4PT-yi-aiR"/>
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shu-kv-vLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="1366.8665667166417"/>
+            <point key="canvasLocation" x="1211.5942028985507" y="1366.7410714285713"/>
         </scene>
         <!--WineList-->
         <scene sceneID="Vkv-j1-deB">
@@ -350,6 +350,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.080000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BWwineStockPhoto1" translatesAutoresizingMaskIntoConstraints="NO" id="zyB-ad-Sje">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKW-BQ-QII">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -424,17 +427,21 @@
                         <constraints>
                             <constraint firstItem="SIz-JL-2aD" firstAttribute="trailing" secondItem="JKW-BQ-QII" secondAttribute="trailing" id="07C-Wa-Dfa"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="leading" secondItem="C8M-Ey-VOu" secondAttribute="leading" constant="10" id="27T-ds-RD1"/>
+                            <constraint firstItem="zyB-ad-Sje" firstAttribute="leading" secondItem="C8M-Ey-VOu" secondAttribute="leading" id="8sF-Ud-Xf8"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="top" secondItem="C8M-Ey-VOu" secondAttribute="top" constant="300" id="El3-oP-4Nb"/>
+                            <constraint firstAttribute="bottom" secondItem="zyB-ad-Sje" secondAttribute="bottom" id="JWM-FV-IOa"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="trailing" secondItem="JKW-BQ-QII" secondAttribute="trailing" id="KSe-9c-lRN"/>
                             <constraint firstItem="JKW-BQ-QII" firstAttribute="leading" secondItem="C8M-Ey-VOu" secondAttribute="leading" id="MPB-oi-CHb"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="bottom" secondItem="yEe-3U-ulJ" secondAttribute="bottom" id="Nku-zU-JSo"/>
                             <constraint firstItem="C8M-Ey-VOu" firstAttribute="bottom" secondItem="JKW-BQ-QII" secondAttribute="bottom" id="Wdn-fN-4nw"/>
                             <constraint firstAttribute="bottom" secondItem="SIz-JL-2aD" secondAttribute="bottom" id="aXw-8W-918"/>
+                            <constraint firstItem="C8M-Ey-VOu" firstAttribute="trailing" secondItem="zyB-ad-Sje" secondAttribute="trailing" id="eM3-kL-ZV0"/>
                             <constraint firstItem="SIz-JL-2aD" firstAttribute="leading" secondItem="JKW-BQ-QII" secondAttribute="leading" id="fYc-yA-P8a"/>
                             <constraint firstItem="yEe-3U-ulJ" firstAttribute="trailing" secondItem="C8M-Ey-VOu" secondAttribute="trailing" constant="-10" id="jZU-m9-mKv"/>
                             <constraint firstItem="JKW-BQ-QII" firstAttribute="top" secondItem="C8M-Ey-VOu" secondAttribute="top" id="lWv-qH-MdO"/>
                             <constraint firstItem="SIz-JL-2aD" firstAttribute="top" secondItem="1dH-xd-gO2" secondAttribute="bottom" constant="20" id="pR2-rC-qSW"/>
                             <constraint firstItem="1dH-xd-gO2" firstAttribute="centerX" secondItem="mar-aH-gzd" secondAttribute="centerX" id="tjD-QH-Wb4"/>
+                            <constraint firstItem="zyB-ad-Sje" firstAttribute="top" secondItem="C8M-Ey-VOu" secondAttribute="top" id="tzD-sN-4bK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C8M-Ey-VOu"/>
                     </view>
@@ -460,6 +467,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.080000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BWwineStockPhoto2" translatesAutoresizingMaskIntoConstraints="NO" id="hdH-VM-O2Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-QJ-YpJ">
                                 <rect key="frame" x="0.0" y="153.66666666666669" width="414" height="708.33333333333326"/>
                                 <subviews>
@@ -564,8 +574,11 @@
                                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbsUpIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hhs-xp-hgK">
+                                        <rect key="frame" x="147" y="536" width="121" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="YhB-M3-EZ2" firstAttribute="top" secondItem="4qc-I8-QEM" secondAttribute="top" id="1Dd-1x-JwR"/>
                                     <constraint firstItem="cks-YB-UQV" firstAttribute="top" secondItem="d9h-QJ-YpJ" secondAttribute="top" id="1z6-DY-JQF"/>
@@ -604,6 +617,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8S7-Ag-raL" firstAttribute="top" secondItem="ODJ-O7-gS6" secondAttribute="top" constant="12" id="02a-5J-x3K"/>
+                            <constraint firstItem="ODJ-O7-gS6" firstAttribute="bottom" secondItem="hdH-VM-O2Z" secondAttribute="bottom" id="B5c-KY-FK5"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="top" secondItem="8S7-Ag-raL" secondAttribute="bottom" constant="30" id="Bmx-bM-glq"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="bottom" secondItem="ODJ-O7-gS6" secondAttribute="bottom" id="Hgb-FO-cmC"/>
                             <constraint firstItem="8S7-Ag-raL" firstAttribute="centerX" secondItem="ahd-bi-j9M" secondAttribute="centerX" id="KDM-XK-5hI"/>
@@ -611,21 +625,25 @@
                             <constraint firstItem="0FB-MY-k9j" firstAttribute="top" secondItem="8S7-Ag-raL" secondAttribute="bottom" constant="2" id="RgA-hr-lmr"/>
                             <constraint firstAttribute="trailing" secondItem="d9h-QJ-YpJ" secondAttribute="trailing" id="UeK-Yu-jIk"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="leading" secondItem="ODJ-O7-gS6" secondAttribute="leading" id="ZUY-aR-OAZ"/>
+                            <constraint firstItem="ODJ-O7-gS6" firstAttribute="trailing" secondItem="hdH-VM-O2Z" secondAttribute="trailing" id="c6h-qU-sT9"/>
                             <constraint firstItem="0FB-MY-k9j" firstAttribute="centerX" secondItem="ahd-bi-j9M" secondAttribute="centerX" id="cjn-Q4-j4i"/>
+                            <constraint firstItem="hdH-VM-O2Z" firstAttribute="top" secondItem="ahd-bi-j9M" secondAttribute="top" id="gVN-Tx-rcm"/>
                             <constraint firstItem="ODJ-O7-gS6" firstAttribute="bottom" secondItem="d9h-QJ-YpJ" secondAttribute="bottom" id="kAa-uU-Wp1"/>
                             <constraint firstItem="8S7-Ag-raL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ODJ-O7-gS6" secondAttribute="leading" id="mng-cv-5E3"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="trailing" secondItem="ODJ-O7-gS6" secondAttribute="trailing" id="qN4-5d-xX2"/>
+                            <constraint firstItem="hdH-VM-O2Z" firstAttribute="leading" secondItem="ODJ-O7-gS6" secondAttribute="leading" id="szK-tY-KEf"/>
                             <constraint firstItem="d9h-QJ-YpJ" firstAttribute="leading" secondItem="ahd-bi-j9M" secondAttribute="leading" id="tr6-s0-cpr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ODJ-O7-gS6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dpi-Pj-Ve2"/>
+                    <navigationItem key="navigationItem" title="Add New Wine" id="dpi-Pj-Ve2"/>
                     <connections>
                         <outlet property="likeStatus" destination="0FB-MY-k9j" id="tD8-Jv-gNA"/>
                         <outlet property="noImageLabel" destination="1ko-6D-HFS" id="bm8-Nf-FQR"/>
                         <outlet property="notesTextView" destination="ubp-s8-Zeh" id="gBZ-jf-bNg"/>
                         <outlet property="price" destination="U33-jh-tiW" id="E5R-aZ-My0"/>
                         <outlet property="store" destination="cBv-Sd-Rmk" id="Zaj-ge-4qV"/>
+                        <outlet property="thumbsUpDownImgView" destination="hhs-xp-hgK" id="kqR-4a-eKI"/>
                         <outlet property="type" destination="0A9-uD-tDE" id="qgs-Sw-evC"/>
                         <outlet property="wineImageView" destination="GLu-ZB-9yc" id="99R-V9-QcZ"/>
                         <outlet property="wineName" destination="8S7-Ag-raL" id="rdt-Gv-as1"/>
@@ -633,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bei-2g-AIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="362"/>
+            <point key="canvasLocation" x="2431.8840579710145" y="361.60714285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCX-4s-iCM">
@@ -655,11 +673,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BWwineStockPhoto1" width="833" height="1052"/>
+        <image name="BWwineStockPhoto2" width="848" height="1175"/>
         <image name="WineListIconBW" width="801" height="801"/>
         <image name="WineListMenuAddIcon(stemlessWhite)" width="600" height="393"/>
         <image name="WineListMenuIcons(stemlesswhite)" width="739" height="471"/>
         <image name="cameraIcon" width="33" height="33"/>
         <image name="thumbnailsIcon" width="33" height="33"/>
+        <image name="thumbsUpIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jlz-Bn-r6E"/>

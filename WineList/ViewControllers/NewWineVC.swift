@@ -111,6 +111,7 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         navBar?.barTintColor = GradientColor(.topToBottom, frame: view.frame, colors: backgroundColor)
         navBar?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Raleway-Regular", size: 18)!, .foregroundColor: UIColor.white]
         navigationController?.title = "Add New Wine"
+        navigationItem.title = "Add New Wine"
         
         //buttons
         takePhotoBtn.layer.borderColor = UIColor.flatGrayDark.cgColor
