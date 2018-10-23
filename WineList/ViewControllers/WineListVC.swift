@@ -176,6 +176,7 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
        // var likeLabel: String?
         var typeLabel: String?
         let detailString: String?
+       
         if let wineName = wine["wineName"] as? String {
             wineCell.backgroundColor = .clear
             wineCell.textLabel?.text = wineName
@@ -194,15 +195,18 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                 if like == 0 {
                    // likeLabel = "Liked!"
                     //wineCell.detailTextLabel?.textColor = .flatMintDark
-                    wineCell.imageView?.image = UIImage(named: "greenThumbsUpIcon.png")
+                    wineCell.imageView?.image = UIImage(named: "smallGreenThumbsUpIcon.png")
+                    wineCell.imageView?.contentMode = .scaleAspectFit
                 } else if like == 1 {
                     //likeLabel = "Disliked!"
                     //wineCell.detailTextLabel?.textColor = .flatRed
-                    wineCell.imageView?.image = UIImage(named: "redThumbsDownIcon.png")
+                    wineCell.imageView?.image = UIImage(named: "smallRedThumbsDownIcon.png")
+                    wineCell.imageView?.contentMode = .scaleAspectFit
                 } else {
                     //sets an invisible dummy image so that text looks uniform throughout list
                     wineCell.imageView?.image = UIImage(named: "thumbsUpIcon.png")
                     wineCell.imageView?.alpha = 0.0
+                    wineCell.imageView?.contentMode = .scaleAspectFit
                 }
             }
             //detailString = "\(typeLabel ?? "") \(likeLabel ?? "")"
