@@ -14,10 +14,15 @@ class WineDetailVC: UIViewController {
     var selectedWine: CKRecord?
     var wines = [CKRecord]()
     let backgroundColor: [UIColor] = [
-        UIColor.flatPlum,
-        UIColor.flatPlum,
-        UIColor.flatMaroonDark
+        UIColor.white,
+        UIColor.flatWhite,
+        UIColor.flatWhite
     ]
+    var nameString: String?
+    var yearString: String?
+    var indexToPass: Int?
+    var priceToPass: String?
+    var notesToPass: String?
     
     @IBOutlet weak var wineImageView: UIImageView!
     @IBOutlet weak var wineName: UILabel!
@@ -31,28 +36,40 @@ class WineDetailVC: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var thumbsUpDownImgView: UIImageView!
     
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    @IBAction func editWineWasTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toAddWineVC", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
           likeStatus.isHidden = true
     
         if let wine = selectedWine {
             let wineName = wine["wineName"] as! String
+            nameString = wineName
             let year = wine["year"] as? String
+            yearString = year
             self.wineName.text = "\(year ?? "") \(wineName)"
-            self.price.text = "$  \(wine["winePrice"] as! String)"
+            self.priceToPass = "$  \(wine["winePrice"] as! String)"
+            self.price.text = priceToPass
             self.type.text = wine["wineType"] as? String
             self.store.text = wine["storeName"] as? String
-            self.notesTextView.text = wine["userNotes"] as? String
+            notesToPass = wine["userNotes"] as? String
+            self.notesTextView.text = notesToPass
             if let likeIndex = wine["likeIndex"] as? Int {
                 if likeIndex == 0 {
                     //self.likeStatus.text = "Liked!"
                     //self.likeStatus.textColor = .flatMint
+                    indexToPass = 0
                     self.thumbsUpDownImgView.image = UIImage(named: "greenThumbsUpIcon.png")
                 } else if likeIndex == 1 {
                    // self.likeStatus.text = "Disliked!"
                     //self.likeStatus.textColor = .flatRed
+                    indexToPass = 1
                     thumbsUpDownImgView.image = UIImage(named: "redThumbsDownIcon.png")
                 } else {
+                    indexToPass = nil
                     thumbsUpDownImgView.isHidden = true
                     likeStatus.isHidden = true
                 }
@@ -84,6 +101,28 @@ class WineDetailVC: UIViewController {
             }
         }
         
-        //view.backgroundColor = .white
+        view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: backgroundColor)
+    }
+    
+    
+    //how to refactor this code to cut down on redundancy?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddWineVC" {
+            let controller = segue.destination as! NewWineVC
+            if selectedWine != nil {
+                controller.passedWineName = nameString
+                controller.passedPrice = price.text
+                controller.passedYear = yearString
+                controller.passedStoreName = store.text
+                controller.passedWineType = type.text
+                controller.passedNotes = notesTextView.text
+                if let likeIndex = indexToPass {
+                    controller.passedIndex = likeIndex
+                }
+                if let wineImage = wineImageView.image {
+                    controller.passedImage = wineImage
+                }
+            }
+        }
     }
 }

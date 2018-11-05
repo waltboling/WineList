@@ -17,20 +17,35 @@ import Photos
 class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCapturePhotoCaptureDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     let imagePicker = UIImagePickerController()
-    var backCamera = AVCaptureDevice.default(for: AVMediaType.video)
+    //var backCamera = AVCaptureDevice.default(for: AVMediaType.video)
     var wines = [CKRecord]()
     var imageURL: NSURL!
     let documentsDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
     let tempImageName = "temp_image.jpg"
     let tempURL: URL? = nil
     let backgroundColor: [UIColor] = [
-        UIColor.flatPlum,
+        UIColor.white,
+        UIColor.flatWhite,
+        UIColor.flatWhite
+    ]
+    let colorSetTwo: [UIColor] = [
         UIColor.flatPlum,
         UIColor.flatMaroonDark
     ]
+   // let steelColor = UIColor(red: 110, green: 110, blue: 110, alpha: 1.0)
     let navBarColor = UIColor.flatPlum
     var notePlaceholderText = "Add new note here..."
     let privateDatabase = CKContainer.default().privateCloudDatabase
+    
+    var passedWineName: String?
+    var passedWineType: String?
+    var passedYear: String?
+    var passedStoreName: String?
+    var passedNotes: String?
+    var passedIndex: Int?
+    var passedImage: UIImage?
+    var passedPrice: String?
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var likedLabel: UILabel!
@@ -69,6 +84,8 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         imagePicker.allowsEditing = false
         imagePicker.sourceType = UIImagePickerController.SourceType.camera
         imagePicker.cameraCaptureMode = .photo
+        //imagePicker.allowsEditing = true // trying to allow for square images
+        //imagePicker.showsCameraControls = true
         imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
@@ -96,10 +113,23 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
         configureTextFields()
         notesTextView.text = notePlaceholderText
-        notesTextView.textColor = .lightGray
+        notesTextView.textColor = UIColor.lightGray
         configureVisual()
         
         imagePicker.delegate = self
+        
+        wineNameTextField.text = passedWineName ?? ""
+        wineTypeTextField.text = passedWineType ?? ""
+        yearTextField.text = passedYear ?? ""
+        storeTextField.text = passedStoreName ?? ""
+        likeWineControl.selectedSegmentIndex = passedIndex ?? UISegmentedControl.noSegment
+        wineImageView.image = passedImage ?? #imageLiteral(resourceName: "WineListIconBW")
+        priceTextField.text = passedPrice ?? ""
+        if let note = passedNotes {
+            notesTextView.text = note
+            notesTextView.textColor = UIColor.flatPlum
+        }
+        
     }
     
     func configureVisual() {
@@ -108,7 +138,7 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         //navBar
         let navBar = self.navigationController?.navigationBar
         navBar?.tintColor = .white
-        navBar?.barTintColor = GradientColor(.topToBottom, frame: view.frame, colors: backgroundColor)
+        navBar?.barTintColor = GradientColor(.topToBottom, frame: view.frame, colors: colorSetTwo)
         navBar?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Raleway-Regular", size: 18)!, .foregroundColor: UIColor.white]
         navigationController?.title = "Add New Wine"
         navigationItem.title = "Add New Wine"
@@ -155,13 +185,14 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             privateDatabase.save(newWine, completionHandler: { (record: CKRecord?, error: Error?) in
                 if error == nil {
                     print("wine saved!")
+                    DispatchQueue.main.sync {
+                        HUD.flash(.labeledSuccess(title: "", subtitle: "Wine Saved!"), delay: 1.0)
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 } else {
                     print("Error: \(error.debugDescription)")
                 }
             })
-            
-            HUD.flash(.labeledSuccess(title: "", subtitle: "Wine Saved!"), delay: 1.0)
-            navigationController?.popToRootViewController(animated: true)
         } else {
             showAlert(title: "Wine name is blank", message: "Please enter a wine name to continue")
         }
@@ -232,9 +263,9 @@ class NewWineVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func textViewDidEndEditing(_ textView: UITextView) {
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         notesTextView.layer.borderColor = UIColor.clear.cgColor
-        if notesTextView.text.isEmpty {
+        if notesTextView.text.isEmpty || notesTextView.text == "" {
             notesTextView.text = notePlaceholderText
-            notesTextView.textColor = .lightGray
+            notesTextView.textColor = UIColor.lightGray
         }
     }
     

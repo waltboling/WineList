@@ -9,7 +9,7 @@
 import UIKit
 import ChameleonFramework
 import CloudKit
-import PKHUD // maybe switch to MBHUD
+import PKHUD 
 
 
 class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
@@ -62,15 +62,18 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         if let indexPath = wineListTableView.indexPathForSelectedRow {
             wineListTableView.deselectRow(at: indexPath, animated: true)
         }
+        
+         loadWines()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         HUD.dimsBackground = false
         HUD.show(.labeledProgress(title: "", subtitle: "Loading Wines"), onView: self.view)
-    
-        loadWines()
+        
+        wineListTableView.register(WineCell.self, forCellReuseIdentifier: "wineCell")
         
         sortOptionsPickerView.isHidden = true
         
@@ -88,7 +91,7 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         let privateDatabase = CKContainer.default().privateCloudDatabase
         let query = CKQuery(recordType: "Wines", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
         //HUD.flash(.progress) - prob need to add comp. handlr w/ hide code
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         privateDatabase.perform(query, inZoneWith: nil) { (results: [CKRecord]?, error: Error?) in
             
             if let wines = results {
@@ -116,7 +119,7 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     func configureVisual() {
         //background
         view.backgroundColor = .white
-        wineListTableView.backgroundColor = .clear
+        wineListTableView.backgroundColor = .white
         
         //toolbar
         toolbar.barTintColor = UIColor.flatPlum
@@ -169,20 +172,22 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
-        let wineCell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath)
+        let wineCell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath) as! WineCell
         //let wine = wines[indexPath.row]
         let wine = filteredWines[indexPath.row]
         var yearLabel: String?
        // var likeLabel: String?
         var typeLabel: String?
-        let detailString: String?
+       // let detailString: String?
+        var priceLabel: String?
+        var storeLabel: String?
        
-        if let wineName = wine["wineName"] as? String {
+       if let wineName = wine["wineName"] as? String {
             wineCell.backgroundColor = .clear
-            wineCell.textLabel?.text = wineName
-            wineCell.textLabel?.textColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
-            wineCell.textLabel?.font = UIFont(name: "Raleway-Regular", size: 17)
-            wineCell.textLabel?.text = "\(wineName)"
+            wineCell.wineNameLabel.text = wineName
+            wineCell.wineNameLabel.textColor = UIColor.flatPlum
+            wineCell.wineNameLabel.font = UIFont(name: "Raleway-Regular", size: 19)
+            wineCell.wineNameLabel.text = "\(wineName)"
             if let year = wine["year"] as? String {
                 yearLabel = year
             }
@@ -190,33 +195,72 @@ class WineListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             if let type = wine["wineType"] as? String {
                 typeLabel = type
             }
-            
+        
+        wineCell.yearAndTypeLabel.text = "\(yearLabel ?? "") \(typeLabel ?? "")"
+        wineCell.yearAndTypeLabel.textColor = UIColor.flatGrayDark
+        wineCell.yearAndTypeLabel.font = UIFont(name: "Raleway-Light", size: 16)
+        
+        if let winePrice = wine["winePrice"] as? String {
+            if winePrice != "" {
+                priceLabel = "$\(winePrice)"
+            }
+        }
+        if let storeName = wine["storeName"] as? String {
+            if priceLabel != nil && storeName != "" {
+                storeLabel = "at \(storeName)"
+            }
+            else {
+                storeLabel = storeName
+            }
+        }
+        
+        
+        wineCell.priceAndStoreLabel.text = "\(priceLabel ?? "") \(storeLabel ?? "")"
+        wineCell.priceAndStoreLabel.textColor = UIColor.flatGrayDark
+        wineCell.priceAndStoreLabel.font = UIFont(name: "Raleway-Light", size: 16)
+        
             if let like = wine["likeIndex"] as? Int {
                 if like == 0 {
                    // likeLabel = "Liked!"
                     //wineCell.detailTextLabel?.textColor = .flatMintDark
-                    wineCell.imageView?.image = UIImage(named: "smallGreenThumbsUpIcon.png")
-                    wineCell.imageView?.contentMode = .scaleAspectFit
+                    wineCell.thumbsUpOrDown.image = UIImage(named: "greenThumbsUpIcon.png")
+                    wineCell.thumbsUpOrDown.contentMode = .scaleAspectFit
                 } else if like == 1 {
                     //likeLabel = "Disliked!"
                     //wineCell.detailTextLabel?.textColor = .flatRed
-                    wineCell.imageView?.image = UIImage(named: "smallRedThumbsDownIcon.png")
-                    wineCell.imageView?.contentMode = .scaleAspectFit
+                    wineCell.thumbsUpOrDown.image = UIImage(named: "redThumbsDownIcon.png")
+                    wineCell.thumbsUpOrDown.contentMode = .scaleAspectFit
                 } else {
-                    //sets an invisible dummy image so that text looks uniform throughout list
+                    /*sets an invisible dummy image so that text looks uniform throughout list
                     wineCell.imageView?.image = UIImage(named: "thumbsUpIcon.png")
                     wineCell.imageView?.alpha = 0.0
-                    wineCell.imageView?.contentMode = .scaleAspectFit
+                    wineCell.imageView?.contentMode = .scaleAspectFit*/
+                    wineCell.thumbsUpOrDown.isHidden = true
+                    wineCell.thumbsBackground.isHidden = true
                 }
             }
+        
+        if let wineImage = wine["photo"] as? CKAsset {
+            wineCell.wineImageView.image = UIImage(contentsOfFile: wineImage.fileURL.path)
+            wineCell.wineImageView.contentMode = .scaleAspectFit
+        } else {
+            wineCell.wineImageView.image = #imageLiteral(resourceName: "WineListIconBW")
+        }
             //detailString = "\(typeLabel ?? "") \(likeLabel ?? "")"
-            detailString = "\(yearLabel ?? "") \(typeLabel ?? "")"
-            wineCell.detailTextLabel?.text = detailString!
+            //detailString = "\(yearLabel ?? "") \(typeLabel ?? "")"
+            /*wineCell.detailTextLabel?.text = detailString!//
             wineCell.detailTextLabel?.textColor = UIColor.darkText
-            wineCell.detailTextLabel?.font = UIFont(name: "Raleway-Light", size: 13)
+            wineCell.detailTextLabel?.font = UIFont(name: "Raleway-Light", size: 13)*/
         }
         
+        wineCell.layer.borderColor = UIColor.flatGray.cgColor
+        wineCell.layer.borderWidth = 0.3
+        
         return wineCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

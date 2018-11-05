@@ -52,6 +52,7 @@
 		E6BF5D7820C3A67F00148C18 /* WineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */; };
 		E6CE76DB210B8EFE00FB04E7 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */; };
 		E6D84D2E215335BE0080BAD7 /* NewWineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */; };
+		E6F42376218FA44400B5C992 /* WineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F42375218FA44400B5C992 /* WineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailVC.swift; sourceTree = "<group>"; };
 		E6CE76DA210B8EFE00FB04E7 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWineVC.swift; sourceTree = "<group>"; };
+		E6F42375218FA44400B5C992 /* WineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				E6BF5D6020C38D5300148C18 /* MainMenuVC.swift */,
 				E6BF5D7320C3A64400148C18 /* WineListVC.swift */,
+				E6F42375218FA44400B5C992 /* WineCell.swift */,
 				E6BF5D7720C3A67F00148C18 /* WineDetailVC.swift */,
 				E6D84D2D215335BE0080BAD7 /* NewWineVC.swift */,
 			);
@@ -550,6 +553,7 @@
 				E6BF5D7820C3A67F00148C18 /* WineDetailVC.swift in Sources */,
 				E6CE76DB210B8EFE00FB04E7 /* KeyboardExtension.swift in Sources */,
 				E6BF5D6120C38D5300148C18 /* MainMenuVC.swift in Sources */,
+				E6F42376218FA44400B5C992 /* WineCell.swift in Sources */,
 				E6BF5D5F20C38D5300148C18 /* AppDelegate.swift in Sources */,
 				E64E906E215AC765002D37B0 /* ConnectionManager.swift in Sources */,
 				E6BF5D7420C3A64400148C18 /* WineListVC.swift in Sources */,
